@@ -47,5 +47,5 @@ $ composer global require serafim/calc
 ## Usage
 
 ```bash
-$ calc
+$ cc
 ```

@@ -20,6 +20,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "bin": [
-        "./bin/calc.php"
+        "./bin/cc.php"
     ]
 }
