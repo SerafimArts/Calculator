@@ -38,14 +38,19 @@ $ php bin/calc.php
 
 ![](https://habrastorage.org/webt/bb/68/su/bb68sua0ulmiwh6uoddnqqj3vx0.png)
 
-## Installation
+## Usage
+
+**Global:**
 
 ```bash
 $ composer global require serafim/calc
-```
-
-## Usage
-
-```bash
 $ cc
 ```
+
+**Local:**
+
+```bash
+$ composer require serafim/calc
+$ ./vendor/bin/cc 
+```
+
