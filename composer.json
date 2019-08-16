@@ -1,0 +1,20 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Calc\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "phplrt/ast": "~2.0|2.0.x-dev",
+        "phplrt/parser": "~2.0|2.0.x-dev",
+        "phplrt/lexer": "~2.0|2.0.x-dev"
+    },
+    "require-dev": {
+        "symfony/console": "~4.0",
+        "symfony/var-dumper": "~4.0",
+        "phplrt/compiler": "~2.0|2.0.x-dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
