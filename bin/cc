@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php
 declare(strict_types=1);
 
@@ -6,7 +7,19 @@ use Phplrt\Source\File;
 use Symfony\Component\Console\Output\StreamOutput;
 use Phplrt\Parser\Exception\ParserRuntimeException;
 
-require __DIR__ . '/../vendor/autoload.php';
+
+foreach ([
+     __DIR__ . '/../../autoload.php',
+     __DIR__ . '/../vendor/autoload.php',
+     __DIR__ . '/vendor/autoload.php',
+ ] as $file) {
+    if (is_file($file)) {
+        require $file;
+
+        break;
+    }
+}
+
 
 $output = new StreamOutput(STDOUT);
 
@@ -30,7 +43,7 @@ while (! $expression = '') {
     try {
         $output->writeln(vsprintf('<question>   </question> <info>%s</info> <comment>(%s)</comment>', [
             $result = $calc->calc(File::fromSources($expression)),
-            \is_int($result) ? 'int' : 'float'
+            \is_int($result) ? 'int' : 'float',
         ]));
     } catch (ParserRuntimeException $error) {
         foreach (error($error, $expression) as $line) {
