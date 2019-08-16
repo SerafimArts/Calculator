@@ -33,7 +33,7 @@ Where
 Command Line Interface
 
 ```bash
-$ php bin/calc.php
+$ php ./bin/cc
 ```
 
 ![](https://habrastorage.org/webt/bb/68/su/bb68sua0ulmiwh6uoddnqqj3vx0.png)
