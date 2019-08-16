@@ -1,4 +1,6 @@
 {
+    "name": "serafim/calc",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Calc\\": "src/"
@@ -16,5 +18,8 @@
         "phplrt/compiler": "~2.0|2.0.x-dev"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "bin": [
+        "./bin/calc.php"
+    ]
 }

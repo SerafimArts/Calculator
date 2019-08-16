@@ -28,22 +28,24 @@ Where
 - `T_INT` is a PCRE `[0-9]+` 
 - `T_FLOAT` is a PCRE `[0-9]+\.[0-9]+`
 
-## Examples
+## Example
 
-Reading and executing an expression from a file:
-
-```bash
-$ php examples/file.php
-```
-
-![](https://habrastorage.org/webt/75/uy/2-/75uy2-oenaodbqmloqkqgonuyam.png)
-
-### CLI Example
-
-With command line interface
+Command Line Interface
 
 ```bash
-$ php examples/cli.php
+$ php bin/calc.php
 ```
 
 ![](https://habrastorage.org/webt/bb/68/su/bb68sua0ulmiwh6uoddnqqj3vx0.png)
+
+## Installation
+
+```bash
+$ composer global require serafim/calc
+```
+
+## Usage
+
+```bash
+$ calc
+```
