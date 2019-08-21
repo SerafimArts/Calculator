@@ -68,16 +68,14 @@ function error(SyntaxErrorException $error, string $expr): iterable
     $token = $error->getToken();
     $offset = $token->getOffset();
 
-    $message = \sprintf('Syntax error in %s at offset %d', $token, $offset);
+    $message = \sprintf($error->getMessage(), $token, $offset);
     $length = \strlen($message);
 
     yield message_delimiter($message);
     yield $message;
-    yield message_delimiter($message);
-
-    yield \str_pad('"' . $expr . '"', $length);
+    yield \str_pad('in "' . $expr . '"', $length);
     yield \str_pad(
-        \str_repeat(' ', $offset + 1) .
+        \str_repeat(' ', $offset + 4) .
         \str_repeat('^', \mb_strlen($token->getValue())),
         $length
     );
