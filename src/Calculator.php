@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace Calc;
 
-use Phplrt\Parser\LL;
 use Phplrt\Lexer\Lexer;
 use Calc\Expression\Addition;
 use Calc\Expression\Division;
@@ -18,24 +17,26 @@ use Calc\Expression\Evaluable;
 use Phplrt\Parser\Rule\Lexeme;
 use Calc\Expression\Statement;
 use Calc\Expression\Subtraction;
+use Phplrt\Parser\AbstractParser;
 use Phplrt\Parser\Rule\Alternation;
 use Calc\Expression\Multiplication;
 use Phplrt\Parser\Rule\Concatenation;
 use Phplrt\Contracts\Ast\NodeInterface;
+use Calc\Exception\SyntaxErrorException;
 use Phplrt\Contracts\Lexer\LexerInterface;
 use Phplrt\Contracts\Lexer\TokenInterface;
 use Phplrt\Contracts\Parser\ParserInterface;
-use Phplrt\Contracts\Source\ReadableInterface;
+use Phplrt\Parser\Exception\ParserException;
+use Phplrt\Parser\Exception\ParserRuntimeException;
 use Phplrt\Contracts\Lexer\Exception\LexerExceptionInterface;
 use Phplrt\Contracts\Parser\Exception\ParserExceptionInterface;
-use Phplrt\Contracts\Source\Exception\NotReadableExceptionInterface;
 use Phplrt\Contracts\Lexer\Exception\RuntimeExceptionInterface as RuntimeLexerExceptionInterface;
 use Phplrt\Contracts\Parser\Exception\RuntimeExceptionInterface as RuntimeParserExceptionInterface;
 
 /**
  * Class Calculator
  */
-class Calculator implements ParserInterface, LexerInterface
+class Calculator extends AbstractParser
 {
     /**
      * @var int
@@ -100,30 +101,11 @@ class Calculator implements ParserInterface, LexerInterface
     private $lexer;
 
     /**
-     * @var LL
-     */
-    private $parser;
-
-    /**
      * Calculator constructor.
      */
     public function __construct()
     {
-        $this->lexer = new Lexer([[self::TOKENS, self::SKIP]]);
-
-        $this->parser = new LL($this->lexer, [
-            /**
-             *  <expr> ::= <term> "+" <expr>
-             *          |  <term>
-             *
-             *  <term> ::= <factor> "*" <term>
-             *          |  <factor>
-             *
-             *  <factor> ::= "(" <expr> ")"
-             *            |  <const>
-             *
-             *  <const> ::= integer
-             */
+        $this->rules = [
             0  => new Concatenation([9], static function (array $children): NodeInterface {
                 return \reset($children);
             }),
@@ -147,42 +129,50 @@ class Calculator implements ParserInterface, LexerInterface
             17 => new Concatenation([15, 9, 16], static function (array $children): NodeInterface {
                 return $children[1];
             }),
-        ]);
+        ];
+
+        parent::__construct(new Lexer([[self::TOKENS, self::SKIP]]));
     }
 
     /**
-     * @param ReadableInterface $source
-     * @return iterable|TokenInterface[]
-     * @throws LexerExceptionInterface
-     * @throws RuntimeLexerExceptionInterface
-     * @throws NotReadableExceptionInterface
-     */
-    public function lex(ReadableInterface $source): iterable
-    {
-        return $this->lexer->lex($source);
-    }
-
-    /**
-     * @param ReadableInterface $src
-     * @return iterable|Evaluable
-     * @throws NotReadableExceptionInterface
-     * @throws ParserExceptionInterface
-     * @throws RuntimeParserExceptionInterface
-     */
-    public function parse(ReadableInterface $src): iterable
-    {
-        return $this->parser->parse($src);
-    }
-
-    /**
-     * @param ReadableInterface $src
+     * @param string|resource $src
      * @return float|int
-     * @throws NotReadableExceptionInterface
      * @throws ParserExceptionInterface
      * @throws RuntimeParserExceptionInterface
      */
-    public function calc(ReadableInterface $src)
+    public function calc($src)
     {
         return $this->parse($src)->eval();
+    }
+
+    /**
+     * {@inheritDoc}
+     * @return iterable|Evaluable
+     */
+    final public function parse($src): iterable
+    {
+        return parent::parse($src);
+    }
+
+    /**
+     * @param TokenInterface $token
+     * @return \Exception
+     */
+    protected function lexError(TokenInterface $token): \Exception
+    {
+        $message = 'A character %s is not part of a mathematical expression';
+
+        return new SyntaxErrorException(\sprintf($message, $token), $token);
+    }
+
+    /**
+     * @param TokenInterface $token
+     * @return ParserRuntimeException
+     */
+    protected function syntaxError(TokenInterface $token): \Exception
+    {
+        $message = 'Syntax error, unexpected %s';
+
+        return new SyntaxErrorException(\sprintf($message, $token), $token);
     }
 }

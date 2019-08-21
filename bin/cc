@@ -3,20 +3,19 @@
 declare(strict_types=1);
 
 use Calc\Calculator;
-use Phplrt\Source\File;
+use Calc\Exception\SyntaxErrorException;
 use Symfony\Component\Console\Output\StreamOutput;
-use Phplrt\Parser\Exception\ParserRuntimeException;
 
+$autoloaderPaths = [
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/vendor/autoload.php',
+];
 
-foreach ([
-             __DIR__ . '/../../../autoload.php',
-             __DIR__ . '/../../autoload.php',
-             __DIR__ . '/../vendor/autoload.php',
-             __DIR__ . '/vendor/autoload.php',
-         ] as $file) {
+foreach ($autoloaderPaths as $file) {
     if (is_file($file)) {
         require $file;
-
         break;
     }
 }
@@ -41,35 +40,46 @@ while (! $expression = '') {
         exit(0);
     }
 
+    $expression = \trim($expression);
+
     try {
         $output->writeln(vsprintf('<question>   </question> <info>%s</info> <comment>(%s)</comment>', [
-            $result = $calc->calc(File::fromSources($expression)),
+            $result = $calc->calc($expression),
             \is_int($result) ? 'int' : 'float',
         ]));
-    } catch (ParserRuntimeException $error) {
+    } catch (SyntaxErrorException $error) {
         foreach (error($error, $expression) as $line) {
-            $output->writeln(sprintf('<error>     %s     </error>', $line));
+            $output->writeln(sprintf('<fg=white;bg=red;options=bold>     %s     </>', $line));
         }
+    } catch (\Throwable $e) {
+        $output->writeln('Fatal Error: ' . $e->getMessage());
+
+        exit($e->getCode() ?: -1);
     }
 }
 
+function message_delimiter(string $message): string
+{
+    return \str_repeat(' ', \strlen($message));
+}
 
-function error(ParserRuntimeException $error, string $expr): iterable
+function error(SyntaxErrorException $error, string $expr): iterable
 {
     $token = $error->getToken();
     $offset = $token->getOffset();
 
     $message = \sprintf('Syntax error in %s at offset %d', $token, $offset);
     $length = \strlen($message);
-    $delimiter = \str_repeat(' ', $length);
 
-    yield $delimiter;
+    yield message_delimiter($message);
     yield $message;
-    yield $delimiter;
-    yield \str_pad($expr, $length);
+    yield message_delimiter($message);
+
+    yield \str_pad('"' . $expr . '"', $length);
     yield \str_pad(
-        \str_repeat(' ', $offset) .
+        \str_repeat(' ', $offset + 1) .
         \str_repeat('^', \mb_strlen($token->getValue())),
         $length
     );
+    yield message_delimiter($message);
 }

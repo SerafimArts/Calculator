@@ -8,24 +8,27 @@
     "packages": [
         {
             "name": "phplrt/ast",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/ast.git",
-                "reference": "05b43ecdb1d2034041e8710728dfce9e4cfd454e"
+                "reference": "8368ba425dacd263d673f5120eedf57e86d96a42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/ast/zipball/05b43ecdb1d2034041e8710728dfce9e4cfd454e",
-                "reference": "05b43ecdb1d2034041e8710728dfce9e4cfd454e",
+                "url": "https://api.github.com/repos/phplrt/ast/zipball/8368ba425dacd263d673f5120eedf57e86d96a42",
+                "reference": "8368ba425dacd263d673f5120eedf57e86d96a42",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
-                "phplrt/ast-contracts": "2.0.*|2.0.x-dev"
+                "phplrt/ast-contracts": "~2.0"
             },
             "provide": {
                 "phplrt/ast-contracts-implementation": "2.0.0"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "~4.0"
             },
             "type": "library",
             "extra": {
@@ -48,13 +51,17 @@
                     "email": "nesk@xakep.ru"
                 }
             ],
-            "description": "The phplrt abstract syntax tree package.",
+            "description": "The phplrt AST package provides a set of basic implementations of AST nodes",
             "homepage": "https://github.com/phplrt",
             "keywords": [
                 "ast",
+                "factor",
+                "leaf",
+                "node",
+                "term",
                 "tree"
             ],
-            "time": "2019-07-31T08:02:27+00:00"
+            "time": "2019-08-21T12:57:48+00:00"
         },
         {
             "name": "phplrt/ast-contracts",
@@ -62,12 +69,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/ast-contracts.git",
-                "reference": "1c3f81111e71a67072aa1e4e4233488e39e1501c"
+                "reference": "70a99bef2bd80066d9cee03affe10da5ceb8736a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/ast-contracts/zipball/1c3f81111e71a67072aa1e4e4233488e39e1501c",
-                "reference": "1c3f81111e71a67072aa1e4e4233488e39e1501c",
+                "url": "https://api.github.com/repos/phplrt/ast-contracts/zipball/70a99bef2bd80066d9cee03affe10da5ceb8736a",
+                "reference": "70a99bef2bd80066d9cee03affe10da5ceb8736a",
                 "shasum": ""
             },
             "require": {
@@ -106,112 +113,7 @@
                 "standards",
                 "tree"
             ],
-            "time": "2019-07-30T14:05:16+00:00"
-        },
-        {
-            "name": "phplrt/exception",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phplrt/exception.git",
-                "reference": "ae5f401e59943886628a2f9edb9a30dbd0546c61"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/exception/zipball/ae5f401e59943886628a2f9edb9a30dbd0546c61",
-                "reference": "ae5f401e59943886628a2f9edb9a30dbd0546c61",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "phplrt/exception-contracts": "~2.0|2.0.x-dev",
-                "phplrt/position": "~2.0|2.0.x-dev",
-                "phplrt/source": "~2.0|2.0.x-dev"
-            },
-            "provide": {
-                "phplrt/exception-contracts-implementation": "2.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phplrt\\Exception\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kirill Nesmeyanov",
-                    "email": "nesk@xakep.ru"
-                }
-            ],
-            "description": "The phplrt Exception package.",
-            "homepage": "https://github.com/phplrt",
-            "keywords": [
-                "exception",
-                "formatting"
-            ],
-            "time": "2019-08-06T15:14:16+00:00"
-        },
-        {
-            "name": "phplrt/exception-contracts",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phplrt/exception-contracts.git",
-                "reference": "cf0a5302bd622c83dec05a14438a8f4993ecee6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/exception-contracts/zipball/cf0a5302bd622c83dec05a14438a8f4993ecee6f",
-                "reference": "cf0a5302bd622c83dec05a14438a8f4993ecee6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "phplrt/source-contracts": "~2.0|2.0.x-dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phplrt\\Contracts\\Exception\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kirill Nesmeyanov",
-                    "email": "nesk@xakep.ru"
-                }
-            ],
-            "description": "A set of phplrt exceptions abstractions",
-            "homepage": "https://github.com/phplrt",
-            "keywords": [
-                "abstractions",
-                "contracts",
-                "decoupling",
-                "exception",
-                "formatting",
-                "interfaces",
-                "interoperability",
-                "standards"
-            ],
-            "time": "2019-07-30T09:58:10+00:00"
+            "time": "2019-08-21T10:45:46+00:00"
         },
         {
             "name": "phplrt/lexer",
@@ -219,12 +121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/lexer.git",
-                "reference": "8848c0bceb5b46c8b122b595ec04695d60ab0472"
+                "reference": "17f4559a788d3d5afc4664deaef79161bd9d13ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/lexer/zipball/8848c0bceb5b46c8b122b595ec04695d60ab0472",
-                "reference": "8848c0bceb5b46c8b122b595ec04695d60ab0472",
+                "url": "https://api.github.com/repos/phplrt/lexer/zipball/17f4559a788d3d5afc4664deaef79161bd9d13ed",
+                "reference": "17f4559a788d3d5afc4664deaef79161bd9d13ed",
                 "shasum": ""
             },
             "require": {
@@ -232,13 +134,10 @@
                 "ext-pcre": "*",
                 "ext-spl": "*",
                 "php": ">=7.1.3",
-                "phplrt/exception": "~2.0|2.0.x-dev",
-                "phplrt/lexer-contracts": "~2.0|2.0.x-dev",
-                "phplrt/source": "~2.0|2.0.x-dev",
-                "symfony/polyfill-php73": "~1.0"
+                "phplrt/lexer-contracts": "~2.0"
             },
             "provide": {
-                "phplrt/lexer-contracts-implementation": "2.0.0"
+                "phplrt/lexer-contracts-implementation": "~2.0"
             },
             "require-dev": {
                 "monolog/monolog": "~1.24",
@@ -265,36 +164,35 @@
                     "email": "nesk@xakep.ru"
                 }
             ],
-            "description": "The phplrt Lexer package.",
+            "description": "The phplrt lexer library that can be used for scanners implementation using PCRE",
             "homepage": "https://github.com/phplrt",
             "keywords": [
                 "lexer",
                 "parsing",
                 "regex",
+                "scanner",
                 "stream",
                 "token",
                 "tokenizer"
             ],
-            "time": "2019-08-08T13:17:34+00:00"
+            "time": "2019-08-21T10:21:24+00:00"
         },
         {
             "name": "phplrt/lexer-contracts",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/lexer-contracts.git",
-                "reference": "e4f162d826337277d582e8ca618b5b798991a9c2"
+                "reference": "a487b3823538de288abac3f48ab5a9b3e408d9d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/e4f162d826337277d582e8ca618b5b798991a9c2",
-                "reference": "e4f162d826337277d582e8ca618b5b798991a9c2",
+                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/a487b3823538de288abac3f48ab5a9b3e408d9d6",
+                "reference": "a487b3823538de288abac3f48ab5a9b3e408d9d6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1.3",
-                "phplrt/exception-contracts": "~2.0|2.0.x-dev",
-                "phplrt/source-contracts": "~2.0|2.0.x-dev"
+                "php": ">=7.1.3"
             },
             "type": "library",
             "extra": {
@@ -333,7 +231,7 @@
                 "token",
                 "tokenizer"
             ],
-            "time": "2019-08-06T16:19:50+00:00"
+            "time": "2019-08-21T10:11:14+00:00"
         },
         {
             "name": "phplrt/parser",
@@ -341,27 +239,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/parser.git",
-                "reference": "a543cc8ae798c1c69d6e99a810856252a8a2235b"
+                "reference": "54f28021937c8ff7910d38345f27b1a45597cf31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/parser/zipball/a543cc8ae798c1c69d6e99a810856252a8a2235b",
-                "reference": "a543cc8ae798c1c69d6e99a810856252a8a2235b",
+                "url": "https://api.github.com/repos/phplrt/parser/zipball/54f28021937c8ff7910d38345f27b1a45597cf31",
+                "reference": "54f28021937c8ff7910d38345f27b1a45597cf31",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
-                "phplrt/ast-contracts": "~2.0|2.0.x-dev",
-                "phplrt/exception": "~2.0|2.0.x-dev",
-                "phplrt/lexer-contracts": "~2.0|2.0.x-dev",
-                "phplrt/parser-contracts": "~2.0|2.0.x-dev",
-                "phplrt/source-contracts": "~2.0|2.0.x-dev",
-                "symfony/polyfill-php73": "~1.12"
+                "phplrt/ast-contracts": "~2.0",
+                "phplrt/lexer-contracts": "~2.0",
+                "phplrt/parser-contracts": "~2.0"
             },
             "provide": {
                 "phplrt/parser-contracts-implementation": "2.0.0"
             },
             "require-dev": {
+                "phplrt/ast": "~2.0|2.0.x-dev",
                 "phplrt/compiler": "~2.0|2.0.x-dev",
                 "phplrt/visitor": "~2.0|2.0.x-dev",
                 "symfony/var-dumper": "~4.0"
@@ -398,7 +294,7 @@
                 "php",
                 "slr"
             ],
-            "time": "2019-08-16T16:15:29+00:00"
+            "time": "2019-08-21T14:23:45+00:00"
         },
         {
             "name": "phplrt/parser-contracts",
@@ -406,20 +302,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/parser-contracts.git",
-                "reference": "86aa67b542443bf154f22d2c6fe5356b142a7e2c"
+                "reference": "014a075b85b23bfc8c176f1378f151cbcde388be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/parser-contracts/zipball/86aa67b542443bf154f22d2c6fe5356b142a7e2c",
-                "reference": "86aa67b542443bf154f22d2c6fe5356b142a7e2c",
+                "url": "https://api.github.com/repos/phplrt/parser-contracts/zipball/014a075b85b23bfc8c176f1378f151cbcde388be",
+                "reference": "014a075b85b23bfc8c176f1378f151cbcde388be",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.3",
-                "phplrt/ast-contracts": "~2.0|2.0.x-dev",
-                "phplrt/exception-contracts": "~2.0|2.0.x-dev",
-                "phplrt/lexer-contracts": "~2.0|2.0.x-dev",
-                "phplrt/source-contracts": "~2.0|2.0.x-dev"
+                "phplrt/ast-contracts": "~2.0"
             },
             "type": "library",
             "extra": {
@@ -446,185 +339,18 @@
             "homepage": "https://github.com/phplrt",
             "keywords": [
                 "abstractions",
+                "analysis",
                 "contracts",
                 "decoupling",
                 "interfaces",
                 "interoperability",
                 "language",
-                "ll1",
-                "llk",
-                "lr",
                 "parser",
                 "php",
-                "slr",
-                "standards"
+                "standards",
+                "syntax"
             ],
-            "time": "2019-08-14T23:00:26+00:00"
-        },
-        {
-            "name": "phplrt/position",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phplrt/position.git",
-                "reference": "074f57e127dcdfd779e2912800ab498d6d00fb03"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/position/zipball/074f57e127dcdfd779e2912800ab498d6d00fb03",
-                "reference": "074f57e127dcdfd779e2912800ab498d6d00fb03",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phplrt\\Position\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kirill Nesmeyanov",
-                    "email": "nesk@xakep.ru"
-                }
-            ],
-            "description": "The phplrt Position package.",
-            "homepage": "https://github.com/phplrt",
-            "keywords": [
-                "analyzing",
-                "column",
-                "input",
-                "line",
-                "offset",
-                "position",
-                "utils",
-                "visualization"
-            ],
-            "time": "2019-07-31T08:12:44+00:00"
-        },
-        {
-            "name": "phplrt/source",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phplrt/source.git",
-                "reference": "e2d210297e1f367a0c23241e9dd9d84f27903631"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/source/zipball/e2d210297e1f367a0c23241e9dd9d84f27903631",
-                "reference": "e2d210297e1f367a0c23241e9dd9d84f27903631",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "phplrt/source-contracts": "~2.0|2.0.x-dev"
-            },
-            "provide": {
-                "phplrt/source-contracts-implementation": "2.0.0"
-            },
-            "require-dev": {
-                "psr/http-message": "~1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phplrt\\Source\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kirill Nesmeyanov",
-                    "email": "nesk@xakep.ru"
-                }
-            ],
-            "description": "The phplrt sources package.",
-            "homepage": "https://github.com/phplrt",
-            "keywords": [
-                "abstraction",
-                "directory",
-                "file",
-                "file system",
-                "fs",
-                "reader"
-            ],
-            "time": "2019-07-31T08:02:53+00:00"
-        },
-        {
-            "name": "phplrt/source-contracts",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phplrt/source-contracts.git",
-                "reference": "f9bbdef2ddcbc5b90cee22f67da6fbd5acaee2e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/source-contracts/zipball/f9bbdef2ddcbc5b90cee22f67da6fbd5acaee2e8",
-                "reference": "f9bbdef2ddcbc5b90cee22f67da6fbd5acaee2e8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phplrt\\Contracts\\Source\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kirill Nesmeyanov",
-                    "email": "nesk@xakep.ru"
-                }
-            ],
-            "description": "A set of phplrt source data abstractions",
-            "homepage": "https://github.com/phplrt",
-            "keywords": [
-                "abstraction",
-                "abstractions",
-                "contracts",
-                "decoupling",
-                "directory",
-                "file",
-                "file system",
-                "fs",
-                "interfaces",
-                "interoperability",
-                "reader",
-                "standards"
-            ],
-            "time": "2019-07-30T07:06:30+00:00"
+            "time": "2019-08-21T11:04:24+00:00"
         },
         {
             "name": "psr/container",

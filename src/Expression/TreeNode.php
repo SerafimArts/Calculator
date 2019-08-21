@@ -44,4 +44,12 @@ abstract class TreeNode extends Node
             return new static(...$args);
         };
     }
+
+    /**
+     * @return \Traversable
+     */
+    public function getIterator(): \Traversable
+    {
+        return new \EmptyIterator();
+    }
 }
