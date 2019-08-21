@@ -36,7 +36,7 @@ Command Line Interface
 $ php ./bin/cc
 ```
 
-![](https://habrastorage.org/webt/bb/68/su/bb68sua0ulmiwh6uoddnqqj3vx0.png)
+![](https://habrastorage.org/webt/9v/dg/nd/9vdgndcio38qu98cicy7y4g2zjk.png)
 
 ## Usage
 
