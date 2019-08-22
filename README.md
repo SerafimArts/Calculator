@@ -9,7 +9,7 @@ recursive descent parser.
 As a grammar used the basic implementation with operators associativity, and 
 not vulnerable to left recursion:
 
-```bnf
+```ebnf
 <expr>           ::= <addition> | <subtraction> | <term>
 
 <term>           ::= <multiplication> | <division> | <factor>
