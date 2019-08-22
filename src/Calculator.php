@@ -76,7 +76,7 @@ class Calculator extends AbstractParser
         self::T_PLUS       => '\+',
         self::T_MINUS      => '\-',
         self::T_POW        => '\*',
-        self::T_DIV        => '/',
+        self::T_DIV        => '[/÷]',
         self::T_FLOAT      => '\d+\.\d+',
         self::T_INT        => '\d+',
         '\(',
@@ -116,13 +116,16 @@ class Calculator extends AbstractParser
             10 => new Concatenation([8, 2, 9], Addition::of()),
             11 => new Concatenation([8, 3, 9], Subtraction::of()),
             12 => new Alternation([7, 17]),
-            13 => new Concatenation([12, 1, 8], Multiplication::of()),
+            13 => new Alternation([18, 19]),
             14 => new Concatenation([12, 4, 8], Division::of()),
             15 => new Value('('),
             16 => new Value(')'),
-            // <group> ::= "(" <expr> ")"
             17 => new Concatenation([15, 9, 16], static function (array $children): NodeInterface {
                 return $children[1];
+            }),
+            18 => new Concatenation([12, 1, 8], Multiplication::of()),
+            19 => new Concatenation([12, 8], static function (array $children, int $offset, int $type): NodeInterface {
+                return new Multiplication([$children[0], null, $children[1]], $offset, $type);
             }),
         ];
 
