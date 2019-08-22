@@ -10,6 +10,13 @@ As a grammar used the basic implementation with operators associativity, and
 not vulnerable to left recursion:
 
 ```bnf
+{
+  tokens = [
+    T_FLOAT = "regexp:\d+\.\d+"
+    T_INT   = "regexp:\d+"
+  ]
+}
+
 <expr>           ::= <addition> | <subtraction> | <term>
 
 <term>           ::= <multiplication> | <division> | <factor>
@@ -22,10 +29,6 @@ not vulnerable to left recursion:
 
 <value>          ::= T_FLOAT | T_INT
 ```
-
-Where 
-- `T_INT` is a PCRE `[0-9]+` 
-- `T_FLOAT` is a PCRE `[0-9]+\.[0-9]+`
 
 ## Example
 
