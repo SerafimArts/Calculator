@@ -10,18 +10,17 @@ As a grammar used the basic implementation with operators associativity, and
 not vulnerable to left recursion:
 
 ```bnf
-<expr> ::= <term> "+" <expr>
-        | <term> "-" <expr>
-        |  <term>
+<expr>           ::= <addition> | <subtraction> | <term>
 
-<term> ::= <factor> "*" <term>
-        | <factor> "/" <term>
-        |  <factor>
+<term>           ::= <multiplication> | <division> | <factor>
+<factor>         ::= "(" <expr> ")" | <value>
 
-<factor> ::= "(" <expr> ")"
-          | <value>
+<subtraction>    ::= <term> "-" <expr>
+<addition>       ::= <term> "+" <expr>
+<multiplication> ::= <factor> "*" <term> | <factor> <term>
+<division>       ::= <factor> ("/" | "÷") <term>
 
-<value> ::= T_FLOAT | T_INT
+<value>          ::= T_FLOAT | T_INT
 ```
 
 Where 
