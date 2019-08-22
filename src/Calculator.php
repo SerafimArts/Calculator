@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of caculator package.
+ * This file is part of Calc package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -23,14 +23,9 @@ use Calc\Expression\Multiplication;
 use Phplrt\Parser\Rule\Concatenation;
 use Phplrt\Contracts\Ast\NodeInterface;
 use Calc\Exception\SyntaxErrorException;
-use Phplrt\Contracts\Lexer\LexerInterface;
 use Phplrt\Contracts\Lexer\TokenInterface;
-use Phplrt\Contracts\Parser\ParserInterface;
-use Phplrt\Parser\Exception\ParserException;
 use Phplrt\Parser\Exception\ParserRuntimeException;
-use Phplrt\Contracts\Lexer\Exception\LexerExceptionInterface;
 use Phplrt\Contracts\Parser\Exception\ParserExceptionInterface;
-use Phplrt\Contracts\Lexer\Exception\RuntimeExceptionInterface as RuntimeLexerExceptionInterface;
 use Phplrt\Contracts\Parser\Exception\RuntimeExceptionInterface as RuntimeParserExceptionInterface;
 
 /**
