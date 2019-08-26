@@ -179,16 +179,16 @@
         },
         {
             "name": "phplrt/lexer-contracts",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/lexer-contracts.git",
-                "reference": "a487b3823538de288abac3f48ab5a9b3e408d9d6"
+                "reference": "05bfa97a82fe35bdbfbd6ec3c45a24de5d411946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/a487b3823538de288abac3f48ab5a9b3e408d9d6",
-                "reference": "a487b3823538de288abac3f48ab5a9b3e408d9d6",
+                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/05bfa97a82fe35bdbfbd6ec3c45a24de5d411946",
+                "reference": "05bfa97a82fe35bdbfbd6ec3c45a24de5d411946",
                 "shasum": ""
             },
             "require": {
@@ -231,20 +231,20 @@
                 "token",
                 "tokenizer"
             ],
-            "time": "2019-08-21T10:11:14+00:00"
+            "time": "2019-08-24T18:10:07+00:00"
         },
         {
             "name": "phplrt/parser",
-            "version": "dev-master",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/parser.git",
-                "reference": "65da2955e016b7f073603d055c6c69be5615c328"
+                "reference": "718518adb51760f301eb95dfcb8dfc9dd5f95a50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/parser/zipball/65da2955e016b7f073603d055c6c69be5615c328",
-                "reference": "65da2955e016b7f073603d055c6c69be5615c328",
+                "url": "https://api.github.com/repos/phplrt/parser/zipball/718518adb51760f301eb95dfcb8dfc9dd5f95a50",
+                "reference": "718518adb51760f301eb95dfcb8dfc9dd5f95a50",
                 "shasum": ""
             },
             "require": {
@@ -294,7 +294,7 @@
                 "php",
                 "slr"
             ],
-            "time": "2019-08-21T15:16:10+00:00"
+            "time": "2019-08-21T16:57:57+00:00"
         },
         {
             "name": "phplrt/parser-contracts",
