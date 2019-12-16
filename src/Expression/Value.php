@@ -22,12 +22,12 @@ final class Value extends TreeNode implements Evaluable
     /**
      * @var string
      */
-    private $of;
+    private string $of;
 
     /**
      * @var bool
      */
-    private $isInteger = true;
+    private bool $isInteger = true;
 
     /**
      * Value constructor.

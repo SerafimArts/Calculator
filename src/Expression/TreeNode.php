@@ -20,7 +20,7 @@ abstract class TreeNode implements NodeInterface
     /**
      * @var int
      */
-    private $offset;
+    private int $offset;
 
     /**
      * TreeNode constructor.

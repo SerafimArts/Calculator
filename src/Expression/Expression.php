@@ -18,12 +18,12 @@ abstract class Expression extends TreeNode implements Evaluable
     /**
      * @var Evaluable
      */
-    protected $a;
+    protected Evaluable $a;
 
     /**
      * @var Evaluable
      */
-    protected $b;
+    protected Evaluable $b;
 
     /**
      * Expression constructor.

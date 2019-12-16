@@ -27,14 +27,14 @@ use Phplrt\Contracts\Parser\Exception\ParserRuntimeExceptionInterface;
 class Calculator implements ParserInterface, LexerInterface
 {
     /**
-     * @var Lexer
+     * @var LexerInterface
      */
-    private $lexer;
+    private LexerInterface $lexer;
 
     /**
-     * @var Parser
+     * @var ParserInterface
      */
-    private $parser;
+    private ParserInterface $parser;
 
     /**
      * Calculator constructor.
