@@ -1,24 +1,23 @@
 {
     "name": "serafim/calc",
     "license": "MIT",
+    "bin": [
+        "./bin/cc"
+    ],
     "autoload": {
         "psr-4": {
-            "Calc\\": "src/"
+            "Serafim\\Calc\\": "src/"
         }
     },
     "require": {
-        "php": ">=7.1",
-        "symfony/console": "~4.0",
-        "phplrt/ast": "~2.0|2.0.x-dev",
-        "phplrt/parser": "~2.0|2.0.x-dev",
-        "phplrt/lexer": "~2.0|2.0.x-dev"
+        "php": ">=7.4",
+        "symfony/console": "^4.0|^5.0",
+        "phplrt/runtime": "^2.3"
     },
     "require-dev": {
-        "symfony/var-dumper": "~4.0"
+        "phplrt/compiler": "^2.3",
+        "symfony/var-dumper": "^4.0|^5.0"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "bin": [
-        "./bin/cc"
-    ]
+    "prefer-stable": true
 }

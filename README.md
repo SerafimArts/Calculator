@@ -35,7 +35,7 @@ not vulnerable to left recursion:
 Command Line Interface
 
 ```bash
-$ php ./bin/cc
+$ php ./bin/cc run
 ```
 
 ![](https://habrastorage.org/webt/mp/d7/ps/mpd7pstl7eda-3ntjsvuz6aho_o.png)
@@ -46,13 +46,13 @@ $ php ./bin/cc
 
 ```bash
 $ composer global require serafim/calc
-$ cc
+$ cc run
 ```
 
 **Local:**
 
 ```bash
 $ composer require serafim/calc
-$ ./vendor/bin/cc 
+$ ./vendor/bin/cc run
 ```
 

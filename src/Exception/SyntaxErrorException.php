@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Calculator package.
  *
@@ -7,9 +8,10 @@
  */
 declare(strict_types=1);
 
-namespace Calc\Exception;
+namespace Serafim\Calc\Exception;
 
 use Phplrt\Contracts\Lexer\TokenInterface;
+use Phplrt\Contracts\Source\ReadableInterface;
 
 /**
  * Class SyntaxErrorException
@@ -19,7 +21,7 @@ class SyntaxErrorException extends \RuntimeException
     /**
      * @var TokenInterface
      */
-    private $token;
+    private TokenInterface $token;
 
     /**
      * SyntaxErrorException constructor.
@@ -30,14 +32,27 @@ class SyntaxErrorException extends \RuntimeException
     public function __construct(string $message, TokenInterface $token)
     {
         parent::__construct($message);
+
         $this->token = $token;
     }
 
     /**
-     * @return TokenInterface
+     * @return array
      */
-    public function getToken(): TokenInterface
+    public function toArray(): array
     {
-        return $this->token;
+        $message = ' ' . $this->getMessage() . ' ';
+
+        $length = \strlen($message);
+
+        return [
+            \str_pad(
+                \str_repeat(' ', $this->token->getOffset() + 2) .
+                \str_repeat('^', \mb_strlen($this->token->getValue())),
+                \strlen($message)
+            ),
+            \str_pad($message, $length, ' ', \STR_PAD_RIGHT),
+            \str_repeat(' ', $length),
+        ];
     }
 }

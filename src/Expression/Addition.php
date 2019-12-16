@@ -7,7 +7,7 @@
  */
 declare(strict_types=1);
 
-namespace Calc\Expression;
+namespace Serafim\Calc\Expression;
 
 /**
  * Class Addition

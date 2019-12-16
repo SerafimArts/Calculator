@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Calc package.
  *
@@ -7,7 +8,7 @@
  */
 declare(strict_types=1);
 
-namespace Calc\Expression;
+namespace Serafim\Calc\Expression;
 
 /**
  * Class Expression
@@ -29,13 +30,12 @@ abstract class Expression extends TreeNode implements Evaluable
      *
      * @param array $children
      * @param int $offset
-     * @param int $type
      */
-    public function __construct(array $children, int $offset, int $type)
+    public function __construct(array $children, int $offset)
     {
-        parent::__construct($type, $offset);
+        parent::__construct($offset);
 
-        [$this->a,, $this->b] = $children;
+        [$this->a, $this->b] = $children;
     }
 
     /**

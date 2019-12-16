@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Calc package.
  *
@@ -7,24 +8,28 @@
  */
 declare(strict_types=1);
 
-namespace Calc\Expression;
+namespace Serafim\Calc\Expression;
 
-use Phplrt\Ast\Node;
+use Phplrt\Contracts\Ast\NodeInterface;
 
 /**
  * Class TreeNode
  */
-abstract class TreeNode extends Node
+abstract class TreeNode implements NodeInterface
 {
+    /**
+     * @var int
+     */
+    private $offset;
+
     /**
      * TreeNode constructor.
      *
      * @param int $offset
-     * @param int $type
      */
-    public function __construct(int $offset, int $type)
+    public function __construct(int $offset)
     {
-        parent::__construct($type, [static::ATTR_OFFSET => $offset]);
+        $this->offset = $offset;
     }
 
     /**
@@ -32,17 +37,7 @@ abstract class TreeNode extends Node
      */
     public function getOffset(): int
     {
-        return (int)$this->getAttribute(static::ATTR_OFFSET, 0);
-    }
-
-    /**
-     * @return \Closure
-     */
-    public static function of(): \Closure
-    {
-        return static function (...$args) {
-            return new static(...$args);
-        };
+        return $this->offset;
     }
 
     /**

@@ -1,17 +1,21 @@
 #!/usr/bin/env php
 <?php
+
 /**
  * This file is part of Calc package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 declare(strict_types=1);
 
-
-use Calc\Calculator;
-use Calc\Exception\SyntaxErrorException;
-use Symfony\Component\Console\Output\StreamOutput;
+use Serafim\Calc\Console\RunCommand;
+use Serafim\Calc\Console\EvalCommand;
+use Serafim\Calc\Console\BuildCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 
 $autoloaderPaths = [
@@ -21,7 +25,6 @@ $autoloaderPaths = [
     __DIR__ . '/vendor/autoload.php',
 ];
 
-
 foreach ($autoloaderPaths as $file) {
     if (is_file($file)) {
         require $file;
@@ -29,60 +32,11 @@ foreach ($autoloaderPaths as $file) {
     }
 }
 
-$output = new StreamOutput(STDOUT);
 
-$output->writeln('<info> Hello Stranger! </info>');
-$output->writeln('<comment> // Write an expression (like "2+2") to get an answer</comment>');
-$output->writeln('<comment> // Write "exit" to exit (Vnezapno!)</comment>');
+$cli = new Application('Calculator');
 
-$calc = new Calculator();
+$cli->add(new BuildCommand());
+$cli->add(new EvalCommand());
+$cli->add(new RunCommand());
 
-while (! $expression = '') {
-    while (! $expression) {
-        $output->write('<question> > </question> ');
-        $expression = \trim(\preg_replace('/\s+/', ' ', fgets(STDIN)));
-    }
-
-    if (\strtolower($expression) === 'exit') {
-        $output->writeln('<question>   </question> <info>Bye!</info>');
-        exit(0);
-    }
-
-    $expression = \trim($expression);
-
-    try {
-        $output->writeln(vsprintf('<question>   </question> <info>%s</info> <comment>(%s)</comment>', [
-            $result = $calc->calc($expression),
-            \is_int($result) ? 'int' : 'float',
-        ]));
-    } catch (SyntaxErrorException $error) {
-        foreach (error($error, $expression) as $line) {
-            $output->writeln(sprintf('<fg=white;bg=red;options=bold>     %s     </>', $line));
-        }
-    } catch (\Throwable $e) {
-        $output->writeln('Fatal Error: ' . $e->getMessage());
-
-        exit($e->getCode() ?: -1);
-    }
-}
-
-function message_delimiter(string $message): string
-{
-    return \str_repeat(' ', \strlen($message));
-}
-
-function error(SyntaxErrorException $error, string $expr): iterable
-{
-    $token = $error->getToken();
-    $offset = $token->getOffset();
-
-    yield message_delimiter($error->getMessage());
-    yield $error->getMessage();
-    yield \str_pad('in "' . $expr . '"', \strlen($error->getMessage()));
-    yield \str_pad(
-        \str_repeat(' ', $offset + 4) .
-        \str_repeat('^', \mb_strlen($token->getValue())),
-        \strlen($error->getMessage())
-    );
-    yield message_delimiter($error->getMessage());
-}
+die($cli->run());

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Calc package.
  *
@@ -7,170 +8,82 @@
  */
 declare(strict_types=1);
 
-namespace Calc;
+namespace Serafim\Calc;
 
 use Phplrt\Lexer\Lexer;
-use Calc\Expression\Addition;
-use Calc\Expression\Division;
-use Phplrt\Parser\Rule\Value;
-use Calc\Expression\Evaluable;
-use Phplrt\Parser\Rule\Lexeme;
-use Calc\Expression\Statement;
-use Calc\Expression\Subtraction;
-use Phplrt\Parser\AbstractParser;
-use Phplrt\Parser\Rule\Alternation;
-use Calc\Expression\Multiplication;
-use Phplrt\Parser\Rule\Concatenation;
-use Phplrt\Contracts\Ast\NodeInterface;
-use Calc\Exception\SyntaxErrorException;
-use Phplrt\Contracts\Lexer\TokenInterface;
+use Phplrt\Parser\Parser;
+use Phplrt\Lexer\Token\EndOfInput;
+use Serafim\Calc\Expression\Evaluable;
+use Serafim\Calc\Exception\SyntaxErrorException;
+use Phplrt\Contracts\Lexer\LexerInterface;
+use Phplrt\Contracts\Parser\ParserInterface;
 use Phplrt\Parser\Exception\ParserRuntimeException;
-use Phplrt\Contracts\Parser\Exception\ParserExceptionInterface;
-use Phplrt\Contracts\Parser\Exception\RuntimeExceptionInterface as RuntimeParserExceptionInterface;
+use Phplrt\Contracts\Lexer\Exception\LexerRuntimeExceptionInterface;
+use Phplrt\Contracts\Parser\Exception\ParserRuntimeExceptionInterface;
 
 /**
  * Class Calculator
  */
-class Calculator extends AbstractParser
+class Calculator implements ParserInterface, LexerInterface
 {
-    /**
-     * @var int
-     */
-    public const T_WHITESPACE = 0x00;
-
-    /**
-     * @var int
-     */
-    public const T_PLUS = 0x01;
-
-    /**
-     * @var int
-     */
-    public const T_MINUS = 0x02;
-
-    /**
-     * @var int
-     */
-    public const T_POW = 0x03;
-
-    /**
-     * @var int
-     */
-    public const T_DIV = 0x04;
-
-    /**
-     * @var int
-     */
-    public const T_FLOAT = 0x05;
-
-    /**
-     * @var int
-     */
-    public const T_INT = 0x06;
-
-    /**
-     * @var string[]
-     */
-    private const TOKENS = [
-        self::T_WHITESPACE => '\s+',
-        self::T_PLUS       => '\+',
-        self::T_MINUS      => '\-',
-        self::T_POW        => '\*',
-        self::T_DIV        => '[/÷]',
-        self::T_FLOAT      => '\d+\.\d+',
-        self::T_INT        => '\d+',
-        '\(',
-        '\)',
-    ];
-
-    /**
-     * @var int[]
-     */
-    private const SKIP = [
-        self::T_WHITESPACE,
-    ];
-
     /**
      * @var Lexer
      */
     private $lexer;
 
     /**
+     * @var Parser
+     */
+    private $parser;
+
+    /**
      * Calculator constructor.
      */
     public function __construct()
     {
-        $this->rules = [
-            0  => new Concatenation([9], static function (array $children): NodeInterface {
-                return \reset($children);
-            }),
-            1  => new Lexeme(static::T_POW),
-            2  => new Lexeme(static::T_PLUS),
-            3  => new Lexeme(static::T_MINUS),
-            4  => new Lexeme(static::T_DIV),
-            5  => new Lexeme(static::T_FLOAT),
-            6  => new Lexeme(static::T_INT),
-            7  => new Alternation([5, 6], Statement::of()),
-            8  => new Alternation([13, 14, 12]),
-            9  => new Alternation([10, 11, 8]),
-            10 => new Concatenation([8, 2, 9], Addition::of()),
-            11 => new Concatenation([8, 3, 9], Subtraction::of()),
-            12 => new Alternation([7, 17]),
-            13 => new Alternation([18, 19]),
-            14 => new Concatenation([12, 4, 8], Division::of()),
-            15 => new Value('('),
-            16 => new Value(')'),
-            17 => new Concatenation([15, 9, 16], static function (array $children): NodeInterface {
-                return $children[1];
-            }),
-            18 => new Concatenation([12, 1, 8], Multiplication::of()),
-            19 => new Concatenation([12, 8], static function (array $children, int $offset, int $type): NodeInterface {
-                return new Multiplication([$children[0], null, $children[1]], $offset, $type);
-            }),
-        ];
+        $grammar = new Grammar();
 
-        parent::__construct(new Lexer([[self::TOKENS, self::SKIP]]));
-    }
+        $this->lexer = new Lexer($grammar->lexemes, $grammar->skips);
 
-    /**
-     * @param string|resource $src
-     * @return float|int
-     * @throws ParserExceptionInterface
-     * @throws RuntimeParserExceptionInterface
-     */
-    public function calc($src)
-    {
-        return $this->parse($src)->eval();
+        $this->parser = new Parser(
+            $this, $grammar->grammar, [
+            Parser::CONFIG_INITIAL_RULE => $grammar->initial,
+            Parser::CONFIG_AST_BUILDER  => new Builder(),
+            Parser::CONFIG_EOI          => EndOfInput::END_OF_INPUT,
+        ]
+        );
     }
 
     /**
      * {@inheritDoc}
-     * @return iterable|Evaluable
      */
-    final public function parse($src): iterable
+    public function lex($source, int $offset = 0): iterable
     {
-        return parent::parse($src);
+        return $this->lexer->lex($source, $offset);
     }
 
     /**
-     * @param TokenInterface $token
-     * @return \Exception
+     * @param mixed $source
+     * @return float|int
+     * @throws ParserRuntimeExceptionInterface
      */
-    protected function lexError(TokenInterface $token): \Exception
+    public function eval($source)
     {
-        $message = 'A character %s is not part of a mathematical expression';
+        /** @var Evaluable $ast */
+        $ast = $this->parse($source);
 
-        return new SyntaxErrorException(\sprintf($message, $token), $token);
+        return $ast->eval();
     }
 
     /**
-     * @param TokenInterface $token
-     * @return ParserRuntimeException
+     * {@inheritDoc}
      */
-    protected function syntaxError(TokenInterface $token): \Exception
+    public function parse($source): iterable
     {
-        $message = 'Syntax error, unexpected %s';
-
-        return new SyntaxErrorException(\sprintf($message, $token), $token);
+        try {
+            return $this->parser->parse($source);
+        } catch (LexerRuntimeExceptionInterface|ParserRuntimeException $e) {
+            throw new SyntaxErrorException($e->getMessage(), $e->getToken());
+        }
     }
 }
