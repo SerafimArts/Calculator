@@ -1,30 +1,21 @@
 <?php
 
-/**
- * This file is part of Calc package.
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 declare(strict_types=1);
 
 namespace Serafim\Calc;
 
-use Phplrt\Lexer\Lexer;
-use Phplrt\Parser\Parser;
-use Phplrt\Lexer\Token\EndOfInput;
-use Serafim\Calc\Expression\Evaluable;
-use Serafim\Calc\Exception\SyntaxErrorException;
+use Phplrt\Contracts\Exception\RuntimeExceptionInterface;
 use Phplrt\Contracts\Lexer\LexerInterface;
 use Phplrt\Contracts\Parser\ParserInterface;
-use Phplrt\Parser\Exception\ParserRuntimeException;
-use Phplrt\Contracts\Lexer\Exception\LexerRuntimeExceptionInterface;
-use Phplrt\Contracts\Parser\Exception\ParserRuntimeExceptionInterface;
+use Phplrt\Lexer\Lexer;
+use Phplrt\Parser\ContextInterface;
+use Phplrt\Parser\Grammar\RuleInterface;
+use Phplrt\Parser\Parser;
+use Serafim\Calc\Ast\Expression\Evaluable;
+use Serafim\Calc\Exception\SyntaxErrorException;
+use Serafim\Calc\Internal\Builder;
 
-/**
- * Class Calculator
- */
-class Calculator implements ParserInterface, LexerInterface
+final class Calculator implements ParserInterface
 {
     /**
      * @var LexerInterface
@@ -41,33 +32,34 @@ class Calculator implements ParserInterface, LexerInterface
      */
     public function __construct()
     {
-        $grammar = new Grammar();
+        /**
+         * @var array{
+         *   initial: non-empty-string,
+         *   tokens: array{
+         *     default: array<non-empty-string, non-empty-string>
+         *   },
+         *   skip: array<array-key, non-empty-string>,
+         *   transitions: array,
+         *   grammar: array<array-key, RuleInterface>,
+         *   reducers: array<array-key, callable(ContextInterface,mixed):mixed>,
+         * } $grammar
+         */
+        $grammar = require __DIR__ . '/grammar.php';
 
-        $this->lexer = new Lexer($grammar->lexemes, $grammar->skips);
+        $this->lexer = new Lexer($grammar['tokens']['default'], $grammar['skip']);
 
-        $this->parser = new Parser(
-            $this, $grammar->grammar, [
-            Parser::CONFIG_INITIAL_RULE => $grammar->initial,
-            Parser::CONFIG_AST_BUILDER  => new Builder(),
-            Parser::CONFIG_EOI          => EndOfInput::END_OF_INPUT,
-        ]
-        );
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function lex($source, int $offset = 0): iterable
-    {
-        return $this->lexer->lex($source, $offset);
+        $this->parser = new Parser($this->lexer, $grammar['grammar'], [
+            Parser::CONFIG_INITIAL_RULE => $grammar['initial'],
+            Parser::CONFIG_AST_BUILDER => new Builder($grammar['reducers']),
+        ]);
     }
 
     /**
      * @param mixed $source
      * @return float|int
-     * @throws ParserRuntimeExceptionInterface
+     * @throws RuntimeExceptionInterface
      */
-    public function eval($source)
+    public function eval(mixed $source): float|int
     {
         /** @var Evaluable $ast */
         $ast = $this->parse($source);
@@ -78,11 +70,11 @@ class Calculator implements ParserInterface, LexerInterface
     /**
      * {@inheritDoc}
      */
-    public function parse($source): iterable
+    public function parse(mixed $source, array $options = []): iterable
     {
         try {
             return $this->parser->parse($source);
-        } catch (LexerRuntimeExceptionInterface|ParserRuntimeException $e) {
+        } catch (RuntimeExceptionInterface $e) {
             throw new SyntaxErrorException($e->getMessage(), $e->getToken());
         }
     }

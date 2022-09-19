@@ -1,12 +1,5 @@
 <?php
 
-/**
- * This file is part of Calculator package.
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace Serafim\Calc\Console;
@@ -21,10 +14,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Phplrt\Contracts\Parser\Exception\ParserRuntimeExceptionInterface;
 
-/**
- * Class EvalCommand
- */
-class EvalCommand extends Command
+final class EvalCommand extends Command
 {
     /**
      * {@inheritDoc}
@@ -71,9 +61,9 @@ class EvalCommand extends Command
                 $output->writeln(Style::error($line));
             }
 
-            return 1;
+            return self::FAILURE;
         }
 
-        return 0;
+        return self::SUCCESS;
     }
 }

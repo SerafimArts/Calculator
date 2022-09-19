@@ -1,5 +1,4 @@
 
-
 %token T_INT      \d+
 %token T_FLOAT    \d+\.\d+
 
@@ -13,6 +12,7 @@
 
 %skip  T_WHITESPACE \s+
 
+%pragma root Expression
 
 #Expression
   : Addition()
@@ -28,37 +28,68 @@ Term
 
 Factor
   : ::T_BRACE_OPEN:: Expression() ::T_BRACE_CLOSE::
-  | Value()
+  | Unary()
   ;
 
 Subtraction -> {
-    return new \Serafim\Calc\Expression\Subtraction($children, $token->getOffset());
+    return new Ast\Expression\Subtraction(
+        $children[0],
+        $children[1],
+        $token->getOffset(),
+    );
 }
   : Term() ::T_MINUS:: Expression()
   ;
 
 Addition -> {
-    return new \Serafim\Calc\Expression\Addition($children, $token->getOffset());
+    return new Ast\Expression\Addition(
+        $children[0],
+        $children[1],
+        $token->getOffset(),
+    );
 }
   : Term() ::T_PLUS:: Expression()
   ;
 
 Multiplication -> {
-    return new \Serafim\Calc\Expression\Multiplication($children, $token->getOffset());
+    return new Ast\Expression\Multiplication(
+        $children[0],
+        $children[1],
+        $token->getOffset(),
+    );
 }
   : Factor() ::T_MUL:: Term()
   | Factor() Term()
   ;
 
 Division -> {
-    return new \Serafim\Calc\Expression\Division($children, $token->getOffset());
+    return new Ast\Expression\Division(
+        $children[0],
+        $children[1],
+        $token->getOffset(),
+    );
 }
   : Factor() ::T_DIV:: Term()
   ;
 
-Value -> {
-    return new \Serafim\Calc\Expression\Value($children, $token->getOffset());
-}
+Unary
+  : Value()
+  | Minus()
+  ;
+
+Minus -> { return new Ast\Expression\Minus($children[0]); }
+  : ::T_MINUS:: Expression()
+  ;
+
+Value
+ : IntValue()
+ | FloatValue()
+ ;
+
+IntValue -> { return new Ast\Expression\IntValue($children->getValue()); }
+  : <T_INT>
+  ;
+
+FloatValue -> { return new Ast\Expression\FloatValue($children->getValue()); }
   : <T_FLOAT>
-  | <T_INT>
   ;

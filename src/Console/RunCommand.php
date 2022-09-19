@@ -1,12 +1,5 @@
 <?php
 
-/**
- * This file is part of Calculator package.
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace Serafim\Calc\Console;
@@ -16,20 +9,14 @@ use Serafim\Calc\Calculator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Question\Question;
 use Serafim\Calc\Exception\SyntaxErrorException;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Exception\RuntimeException;
-use Symfony\Component\Console\Question\ConfirmationQuestion;
 
-/**
- * Class RunCommand
- */
-class RunCommand extends Command
+final class RunCommand extends Command
 {
     /**
-     * @var string
+     * @var non-empty-string
      */
     private const EXIT_COMMAND = 'exit';
 
@@ -52,10 +39,10 @@ class RunCommand extends Command
     /**
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return int|void
+     * @return int
      * @throws \Phplrt\Contracts\Parser\Exception\ParserRuntimeExceptionInterface
      */
-    public function run(InputInterface $input, OutputInterface $output)
+    public function run(InputInterface $input, OutputInterface $output): int
     {
         $calculator = new Calculator();
 
@@ -67,7 +54,7 @@ class RunCommand extends Command
             if (\strtolower($expression) === self::EXIT_COMMAND) {
                 $output->writeln(Style::interactive(' ') . '<info> Bye! </info>');
 
-                return 0;
+                return self::SUCCESS;
             }
 
             if ($expression) {
