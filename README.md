@@ -38,7 +38,7 @@ Command Line Interface
 $ php ./bin/cc run
 ```
 
-![image](https://user-images.githubusercontent.com/2461257/191113237-22d4889e-dfb7-493f-b284-a754a3708765.png)
+![image](https://user-images.githubusercontent.com/2461257/191113809-7a637fc2-71e0-48f7-a080-3998bab5edaa.png)
 
 ## Usage
 
