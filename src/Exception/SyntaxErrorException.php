@@ -4,11 +4,7 @@ declare(strict_types=1);
 namespace Serafim\Calc\Exception;
 
 use Phplrt\Contracts\Lexer\TokenInterface;
-use Phplrt\Contracts\Source\ReadableInterface;
 
-/**
- * Class SyntaxErrorException
- */
 class SyntaxErrorException extends \RuntimeException
 {
     /**
@@ -17,8 +13,6 @@ class SyntaxErrorException extends \RuntimeException
     private TokenInterface $token;
 
     /**
-     * SyntaxErrorException constructor.
-     *
      * @param string $message
      * @param TokenInterface $token
      */

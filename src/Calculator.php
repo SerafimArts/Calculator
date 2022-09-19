@@ -7,6 +7,7 @@ namespace Serafim\Calc;
 use Phplrt\Contracts\Exception\RuntimeExceptionInterface;
 use Phplrt\Contracts\Lexer\LexerInterface;
 use Phplrt\Contracts\Parser\ParserInterface;
+use Phplrt\Exception\RuntimeException;
 use Phplrt\Lexer\Lexer;
 use Phplrt\Parser\ContextInterface;
 use Phplrt\Parser\Grammar\RuleInterface;
@@ -75,7 +76,15 @@ final class Calculator implements ParserInterface
         try {
             return $this->parser->parse($source);
         } catch (RuntimeExceptionInterface $e) {
-            throw new SyntaxErrorException($e->getMessage(), $e->getToken());
+            $message = $e->getMessage();
+
+            if ($e instanceof RuntimeException) {
+                $message = $e->getOriginalMessage();
+            }
+
+            $message .= ' in "' . $source . '"';
+
+            throw new SyntaxErrorException($message, $e->getToken());
         }
     }
 }

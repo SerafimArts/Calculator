@@ -48,7 +48,7 @@ final class RunCommand extends Command
 
         $this->header($output);
 
-        while (! $expression = '') {
+        while (true) {
             $expression = $this->input($input, $output);
 
             if (\strtolower($expression) === self::EXIT_COMMAND) {
