@@ -38,7 +38,7 @@ Command Line Interface
 $ php ./bin/cc run
 ```
 
-![](https://habrastorage.org/webt/mp/d7/ps/mpd7pstl7eda-3ntjsvuz6aho_o.png)
+![image](https://user-images.githubusercontent.com/2461257/191113237-22d4889e-dfb7-493f-b284-a754a3708765.png)
 
 ## Usage
 
