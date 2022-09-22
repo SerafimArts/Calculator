@@ -40,6 +40,8 @@ $ php ./bin/cc run
 
 ![image](https://user-images.githubusercontent.com/2461257/191113809-7a637fc2-71e0-48f7-a080-3998bab5edaa.png)
 
+![image](https://user-images.githubusercontent.com/2461257/191683008-9566dc7e-5ff3-4648-b2e1-fddf35caf363.jpg)
+
 ## Usage
 
 **Global:**
