@@ -13,6 +13,5 @@ abstract class Value extends Node implements Evaluable
      */
     public function __construct(
         public readonly string $value,
-    ) {
-    }
+    ) {}
 }

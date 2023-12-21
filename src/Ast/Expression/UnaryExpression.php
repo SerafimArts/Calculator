@@ -6,13 +6,9 @@ namespace Serafim\Calc\Ast\Expression;
 
 abstract class UnaryExpression extends Expression implements Evaluable
 {
-    /**
-     * @param Evaluable $a
-     */
     public function __construct(
         public readonly Evaluable $a,
-    ) {
-    }
+    ) {}
 
     /**
      * @return \Traversable<Evaluable>

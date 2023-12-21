@@ -9,12 +9,12 @@ use Phplrt\Contracts\Ast\NodeInterface;
 abstract class Node implements NodeInterface
 {
     /**
-     * @var positive-int|0
+     * @var int<0, max>
      */
     public int $offset = 0;
 
     /**
-     * @return positive-int|0
+     * @return int<0, max>
      */
     public function getOffset(): int
     {
@@ -22,7 +22,7 @@ abstract class Node implements NodeInterface
     }
 
     /**
-     * @return \Traversable<NodeInterface|array<NodeInterface>>
+     * @return \Traversable<NodeInterface|list<NodeInterface>>
      */
     public function getIterator(): \Traversable
     {

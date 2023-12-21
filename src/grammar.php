@@ -24,28 +24,26 @@ return [
         
     ],
     'grammar' => [
-        'Expression' => new \Phplrt\Parser\Grammar\Alternation([0, 1, 2]),
         0 => new \Phplrt\Parser\Grammar\Concatenation([2, 11, 'Expression']),
         1 => new \Phplrt\Parser\Grammar\Concatenation([2, 10, 'Expression']),
         2 => new \Phplrt\Parser\Grammar\Alternation([3, 4, 5]),
-        3 => new \Phplrt\Parser\Grammar\Alternation([13, 14]),
-        4 => new \Phplrt\Parser\Grammar\Concatenation([5, 15, 2]),
+        3 => new \Phplrt\Parser\Grammar\Concatenation([5, 12, 2]),
+        4 => new \Phplrt\Parser\Grammar\Concatenation([5, 13, 2]),
         5 => new \Phplrt\Parser\Grammar\Alternation([8, 9]),
         6 => new \Phplrt\Parser\Grammar\Lexeme('T_BRACE_OPEN', false),
         7 => new \Phplrt\Parser\Grammar\Lexeme('T_BRACE_CLOSE', false),
         8 => new \Phplrt\Parser\Grammar\Concatenation([6, 'Expression', 7]),
-        9 => new \Phplrt\Parser\Grammar\Alternation([16, 17]),
+        9 => new \Phplrt\Parser\Grammar\Alternation([14, 15]),
         10 => new \Phplrt\Parser\Grammar\Lexeme('T_MINUS', false),
         11 => new \Phplrt\Parser\Grammar\Lexeme('T_PLUS', false),
         12 => new \Phplrt\Parser\Grammar\Lexeme('T_MUL', false),
-        13 => new \Phplrt\Parser\Grammar\Concatenation([5, 12, 2]),
-        14 => new \Phplrt\Parser\Grammar\Concatenation([5, 2]),
-        15 => new \Phplrt\Parser\Grammar\Lexeme('T_DIV', false),
-        18 => new \Phplrt\Parser\Grammar\Lexeme('T_MINUS', false),
-        17 => new \Phplrt\Parser\Grammar\Concatenation([18, 'Expression']),
-        16 => new \Phplrt\Parser\Grammar\Alternation([19, 20]),
-        19 => new \Phplrt\Parser\Grammar\Lexeme('T_INT', true),
-        20 => new \Phplrt\Parser\Grammar\Lexeme('T_FLOAT', true)
+        13 => new \Phplrt\Parser\Grammar\Lexeme('T_DIV', false),
+        16 => new \Phplrt\Parser\Grammar\Lexeme('T_MINUS', false),
+        'Expression' => new \Phplrt\Parser\Grammar\Alternation([0, 1, 2]),
+        15 => new \Phplrt\Parser\Grammar\Concatenation([16, 'Expression']),
+        14 => new \Phplrt\Parser\Grammar\Alternation([17, 18]),
+        17 => new \Phplrt\Parser\Grammar\Lexeme('T_INT', true),
+        18 => new \Phplrt\Parser\Grammar\Lexeme('T_FLOAT', true)
     ],
     'reducers' => [
         1 => function (\Phplrt\Parser\Context $ctx, $children) {
@@ -80,13 +78,13 @@ return [
             $token->getOffset(),
         );
         },
-        17 => function (\Phplrt\Parser\Context $ctx, $children) {
+        15 => function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\Minus($children[0]);
         },
-        19 => function (\Phplrt\Parser\Context $ctx, $children) {
+        17 => function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\IntValue($children->getValue());
         },
-        20 => function (\Phplrt\Parser\Context $ctx, $children) {
+        18 => function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\FloatValue($children->getValue());
         }
     ]

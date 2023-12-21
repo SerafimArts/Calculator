@@ -6,9 +6,6 @@ namespace Serafim\Calc\Ast\Expression;
 
 final class Division extends BinaryExpression
 {
-    /**
-     * @return int|float
-     */
     public function eval(): int|float
     {
         return $this->a->eval() / $this->b->eval();

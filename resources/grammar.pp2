@@ -59,7 +59,6 @@ Multiplication -> {
     );
 }
   : Factor() ::T_MUL:: Term()
-  | Factor() Term()
   ;
 
 Division -> {

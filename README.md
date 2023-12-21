@@ -24,7 +24,7 @@ not vulnerable to left recursion:
 
 <subtraction>    ::= <term> "-" <expr>
 <addition>       ::= <term> "+" <expr>
-<multiplication> ::= <factor> "*" <term> | <factor> <term>
+<multiplication> ::= <factor> "*" <term>
 <division>       ::= <factor> ("/" | "÷") <term>
 
 <value>          ::= T_FLOAT | T_INT

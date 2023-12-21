@@ -18,19 +18,10 @@ use Serafim\Calc\Internal\Builder;
 
 final class Calculator implements ParserInterface
 {
-    /**
-     * @var LexerInterface
-     */
     private LexerInterface $lexer;
 
-    /**
-     * @var ParserInterface
-     */
     private ParserInterface $parser;
 
-    /**
-     * Calculator constructor.
-     */
     public function __construct()
     {
         /**
@@ -56,8 +47,6 @@ final class Calculator implements ParserInterface
     }
 
     /**
-     * @param mixed $source
-     * @return float|int
      * @throws RuntimeExceptionInterface
      */
     public function eval(mixed $source): float|int
@@ -68,9 +57,6 @@ final class Calculator implements ParserInterface
         return $ast->eval();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function parse(mixed $source, array $options = []): iterable
     {
         try {
