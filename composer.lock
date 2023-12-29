@@ -4,27 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3741650d3ccd07b1da66042addd7829",
+    "content-hash": "942a566dddfdd0ec3ffad8e94c6eb61d",
     "packages": [
         {
             "name": "phplrt/ast-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/ast-contracts.git",
-                "reference": "458ef1d14479021449133fa320d640ae9af05430"
+                "reference": "3654ac0be9d33eab10caaafa0f3662647cfeaee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/ast-contracts/zipball/458ef1d14479021449133fa320d640ae9af05430",
-                "reference": "458ef1d14479021449133fa320d640ae9af05430",
+                "url": "https://api.github.com/repos/phplrt/ast-contracts/zipball/3654ac0be9d33eab10caaafa0f3662647cfeaee0",
+                "reference": "3654ac0be9d33eab10caaafa0f3662647cfeaee0",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -61,33 +61,33 @@
                 "tree"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/ast-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/ast-contracts"
             },
-            "time": "2022-04-09T18:55:16+00:00"
+            "time": "2023-11-04T17:01:20+00:00"
         },
         {
             "name": "phplrt/buffer",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/buffer.git",
-                "reference": "60c2a9959ddbd6a0c95810d97f5472561998eb28"
+                "reference": "5bf9710fe7e60ab0becd8ba674fa4932f4253547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/buffer/zipball/60c2a9959ddbd6a0c95810d97f5472561998eb28",
-                "reference": "60c2a9959ddbd6a0c95810d97f5472561998eb28",
+                "url": "https://api.github.com/repos/phplrt/buffer/zipball/5bf9710fe7e60ab0becd8ba674fa4932f4253547",
+                "reference": "5bf9710fe7e60ab0becd8ba674fa4932f4253547",
                 "shasum": ""
             },
             "require": {
                 "ext-spl": "*",
                 "php": "^7.4|^8.0",
-                "phplrt/lexer": "^3.2"
+                "phplrt/lexer": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -122,20 +122,20 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/buffer"
             },
-            "time": "2022-04-10T01:02:15+00:00"
+            "time": "2023-11-04T17:13:40+00:00"
         },
         {
             "name": "phplrt/exception",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/exception.git",
-                "reference": "f238e08ccfd9017eb35e458fd7120a6fbb20d31d"
+                "reference": "03cf95abe7dce1dc3a9792192e83fac5b4fd258c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/exception/zipball/f238e08ccfd9017eb35e458fd7120a6fbb20d31d",
-                "reference": "f238e08ccfd9017eb35e458fd7120a6fbb20d31d",
+                "url": "https://api.github.com/repos/phplrt/exception/zipball/03cf95abe7dce1dc3a9792192e83fac5b4fd258c",
+                "reference": "03cf95abe7dce1dc3a9792192e83fac5b4fd258c",
                 "shasum": ""
             },
             "require": {
@@ -144,16 +144,16 @@
                 "ext-pcre": "*",
                 "ext-spl": "*",
                 "php": "^7.4|^8.0",
-                "phplrt/exception-contracts": "^3.2",
-                "phplrt/position": "^3.2",
-                "phplrt/source": "^3.2"
+                "phplrt/exception-contracts": "^3.4",
+                "phplrt/position": "^3.4",
+                "phplrt/source": "^3.4"
             },
             "provide": {
-                "phplrt/exception-contracts-implementation": "^3.2"
+                "phplrt/exception-contracts-implementation": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -189,29 +189,29 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/exception"
             },
-            "time": "2022-04-09T21:01:55+00:00"
+            "time": "2023-11-04T17:14:03+00:00"
         },
         {
             "name": "phplrt/exception-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/exception-contracts.git",
-                "reference": "d42f8f4bb668a423a911e02431c50a6909fd9bc9"
+                "reference": "cf592804951c8d99ec68051f948167f937213ad2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/exception-contracts/zipball/d42f8f4bb668a423a911e02431c50a6909fd9bc9",
-                "reference": "d42f8f4bb668a423a911e02431c50a6909fd9bc9",
+                "url": "https://api.github.com/repos/phplrt/exception-contracts/zipball/cf592804951c8d99ec68051f948167f937213ad2",
+                "reference": "cf592804951c8d99ec68051f948167f937213ad2",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/lexer-contracts": "^3.2",
-                "phplrt/source-contracts": "^3.2"
+                "phplrt/lexer-contracts": "^3.4",
+                "phplrt/source-contracts": "^3.4"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -247,23 +247,23 @@
                 "standards"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/exception-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/exception-contracts"
             },
-            "time": "2022-04-09T18:55:18+00:00"
+            "time": "2023-11-03T14:49:56+00:00"
         },
         {
             "name": "phplrt/lexer",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/lexer.git",
-                "reference": "d2c885f011c6cb9bbaa50f9115e55fe45ed577cc"
+                "reference": "9a3442611d628dc6e4699ba35657b22855735076"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/lexer/zipball/d2c885f011c6cb9bbaa50f9115e55fe45ed577cc",
-                "reference": "d2c885f011c6cb9bbaa50f9115e55fe45ed577cc",
+                "url": "https://api.github.com/repos/phplrt/lexer/zipball/9a3442611d628dc6e4699ba35657b22855735076",
+                "reference": "9a3442611d628dc6e4699ba35657b22855735076",
                 "shasum": ""
             },
             "require": {
@@ -272,16 +272,16 @@
                 "ext-pcre": "*",
                 "ext-spl": "*",
                 "php": "^7.4|^8.0",
-                "phplrt/exception": "^3.2",
-                "phplrt/lexer-contracts": "^3.2",
-                "phplrt/source": "^3.2"
+                "phplrt/exception": "^3.4",
+                "phplrt/lexer-contracts": "^3.4",
+                "phplrt/source": "^3.4"
             },
             "provide": {
-                "phplrt/lexer-contracts-implementation": "^3.2"
+                "phplrt/lexer-contracts-implementation": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -323,27 +323,27 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/lexer"
             },
-            "time": "2022-04-10T13:58:16+00:00"
+            "time": "2023-11-04T17:14:00+00:00"
         },
         {
             "name": "phplrt/lexer-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/lexer-contracts.git",
-                "reference": "a33b7a427953d5f9029b59d6588e368a17a50c44"
+                "reference": "eb3a86ac744adb21967bdf56321b197c743f9e49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/a33b7a427953d5f9029b59d6588e368a17a50c44",
-                "reference": "a33b7a427953d5f9029b59d6588e368a17a50c44",
+                "url": "https://api.github.com/repos/phplrt/lexer-contracts/zipball/eb3a86ac744adb21967bdf56321b197c743f9e49",
+                "reference": "eb3a86ac744adb21967bdf56321b197c743f9e49",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -387,36 +387,36 @@
                 "tokenizer"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/lexer-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/lexer-contracts"
             },
-            "time": "2022-04-10T14:15:00+00:00"
+            "time": "2023-11-03T14:50:01+00:00"
         },
         {
             "name": "phplrt/parser",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/parser.git",
-                "reference": "91c7d7bcfca79344799b01da1a17bda295769c75"
+                "reference": "3e2c710f1d00daa9037543a7aa11e98b09612b42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/parser/zipball/91c7d7bcfca79344799b01da1a17bda295769c75",
-                "reference": "91c7d7bcfca79344799b01da1a17bda295769c75",
+                "url": "https://api.github.com/repos/phplrt/parser/zipball/3e2c710f1d00daa9037543a7aa11e98b09612b42",
+                "reference": "3e2c710f1d00daa9037543a7aa11e98b09612b42",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/ast-contracts": "^3.2",
-                "phplrt/buffer": "^3.2",
-                "phplrt/exception": "^3.2",
-                "phplrt/lexer-contracts": "^3.2",
-                "phplrt/parser-contracts": "^3.2",
-                "phplrt/source": "^3.2"
+                "phplrt/ast-contracts": "^3.4",
+                "phplrt/buffer": "^3.4",
+                "phplrt/exception": "^3.4",
+                "phplrt/lexer-contracts": "^3.4",
+                "phplrt/parser-contracts": "^3.4",
+                "phplrt/source": "^3.4"
             },
             "provide": {
-                "phplrt/parser-contracts-implementation": "^3.2"
+                "phplrt/parser-contracts-implementation": "^3.4"
             },
             "replace": {
                 "phplrt/grammar": "<=3.1",
@@ -424,10 +424,10 @@
             },
             "require-dev": {
                 "jetbrains/phpstorm-attributes": "^1.0",
-                "phplrt/lexer": "^3.2",
-                "phplrt/visitor": "^3.2",
+                "phplrt/lexer": "^3.4",
+                "phplrt/visitor": "^3.4",
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -469,27 +469,27 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/parser"
             },
-            "time": "2022-04-10T01:02:12+00:00"
+            "time": "2023-11-23T19:22:22+00:00"
         },
         {
             "name": "phplrt/parser-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/parser-contracts.git",
-                "reference": "21b2164feed26270a53a41f5569f8589b38b69cb"
+                "reference": "f784bb0880e565d6c10230d4b63045ad6c8f26f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/parser-contracts/zipball/21b2164feed26270a53a41f5569f8589b38b69cb",
-                "reference": "21b2164feed26270a53a41f5569f8589b38b69cb",
+                "url": "https://api.github.com/repos/phplrt/parser-contracts/zipball/f784bb0880e565d6c10230d4b63045ad6c8f26f5",
+                "reference": "f784bb0880e565d6c10230d4b63045ad6c8f26f5",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -529,36 +529,36 @@
                 "syntax"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/parser-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/parser-contracts"
             },
-            "time": "2022-04-09T18:55:34+00:00"
+            "time": "2023-11-04T17:01:36+00:00"
         },
         {
             "name": "phplrt/position",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/position.git",
-                "reference": "7912efd6b7883d6a30e0b5efe4056c302c720359"
+                "reference": "09093185a46a49ae33d705ba68fc0472680339b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/position/zipball/7912efd6b7883d6a30e0b5efe4056c302c720359",
-                "reference": "7912efd6b7883d6a30e0b5efe4056c302c720359",
+                "url": "https://api.github.com/repos/phplrt/position/zipball/09093185a46a49ae33d705ba68fc0472680339b6",
+                "reference": "09093185a46a49ae33d705ba68fc0472680339b6",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/position-contracts": "^3.2",
-                "phplrt/source": "^3.2"
+                "phplrt/position-contracts": "^3.4",
+                "phplrt/source-contracts": "^3.4"
             },
             "provide": {
-                "phplrt/position-contracts-implementation": "^3.2"
+                "phplrt/position-contracts-implementation": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -598,27 +598,27 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/position"
             },
-            "time": "2022-04-09T18:56:35+00:00"
+            "time": "2023-11-04T17:14:06+00:00"
         },
         {
             "name": "phplrt/position-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/position-contracts.git",
-                "reference": "65490465e4bef9785fc5f0dfddd9fb09cf9b2e33"
+                "reference": "3e0a615ffcda9ddabd2f7b3fb8315800aac388ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/position-contracts/zipball/65490465e4bef9785fc5f0dfddd9fb09cf9b2e33",
-                "reference": "65490465e4bef9785fc5f0dfddd9fb09cf9b2e33",
+                "url": "https://api.github.com/repos/phplrt/position-contracts/zipball/3e0a615ffcda9ddabd2f7b3fb8315800aac388ea",
+                "reference": "3e0a615ffcda9ddabd2f7b3fb8315800aac388ea",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -661,31 +661,31 @@
                 "visualization"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/position-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/position-contracts"
             },
-            "time": "2022-04-09T18:55:33+00:00"
+            "time": "2023-11-03T15:35:56+00:00"
         },
         {
             "name": "phplrt/runtime",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/runtime.git",
-                "reference": "a7310098ee98f7b148e60b64ac173b76e7926e46"
+                "reference": "50cc685d1bb4ee3d43049c29199565bd07493be1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/runtime/zipball/a7310098ee98f7b148e60b64ac173b76e7926e46",
-                "reference": "a7310098ee98f7b148e60b64ac173b76e7926e46",
+                "url": "https://api.github.com/repos/phplrt/runtime/zipball/50cc685d1bb4ee3d43049c29199565bd07493be1",
+                "reference": "50cc685d1bb4ee3d43049c29199565bd07493be1",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/lexer": "^3.2",
-                "phplrt/parser": "^3.2",
-                "phplrt/position": "^3.2",
-                "phplrt/visitor": "^3.2"
+                "phplrt/lexer": "^3.4",
+                "phplrt/parser": "^3.4",
+                "phplrt/position": "^3.4",
+                "phplrt/visitor": "^3.4"
             },
             "type": "metapackage",
             "extra": {
@@ -710,37 +710,39 @@
                 "runtime"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/runtime/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/runtime"
             },
-            "time": "2022-04-09T18:55:43+00:00"
+            "time": "2023-11-03T14:06:51+00:00"
         },
         {
             "name": "phplrt/source",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/source.git",
-                "reference": "86513f0fc3f8624a91f7a18cb6f7cf80759ad515"
+                "reference": "1d72cbadbabbc761a7d0cb38a44dc3ea29a0960c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/source/zipball/86513f0fc3f8624a91f7a18cb6f7cf80759ad515",
-                "reference": "86513f0fc3f8624a91f7a18cb6f7cf80759ad515",
+                "url": "https://api.github.com/repos/phplrt/source/zipball/1d72cbadbabbc761a7d0cb38a44dc3ea29a0960c",
+                "reference": "1d72cbadbabbc761a7d0cb38a44dc3ea29a0960c",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/source-contracts": "^3.2"
+                "phplrt/source-contracts": "^3.4",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
+                "symfony/polyfill-php80": "^1.28"
             },
             "provide": {
-                "phplrt/source-contracts-implementation": "^3.2"
+                "phplrt/source-contracts-implementation": "^3.4"
             },
             "require-dev": {
-                "laminas/laminas-diactoros": "^2.2",
+                "laminas/laminas-diactoros": "^2.17",
                 "phpunit/phpunit": "^9.5.20",
                 "psr/http-message": "^1.0",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -778,27 +780,27 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/source"
             },
-            "time": "2022-04-09T21:01:59+00:00"
+            "time": "2023-11-04T17:14:12+00:00"
         },
         {
             "name": "phplrt/source-contracts",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/source-contracts.git",
-                "reference": "12e8f8e5056dfc9df8c56cd60dd78214bb6824fc"
+                "reference": "75368138de5fbd5ac65c07eb2fbad78175fd518e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/source-contracts/zipball/12e8f8e5056dfc9df8c56cd60dd78214bb6824fc",
-                "reference": "12e8f8e5056dfc9df8c56cd60dd78214bb6824fc",
+                "url": "https://api.github.com/repos/phplrt/source-contracts/zipball/75368138de5fbd5ac65c07eb2fbad78175fd518e",
+                "reference": "75368138de5fbd5ac65c07eb2fbad78175fd518e",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0"
             },
             "require-dev": {
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -832,32 +834,32 @@
                 "source"
             ],
             "support": {
-                "issues": "https://github.com/phplrt/source-contracts/issues",
+                "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/source-contracts"
             },
-            "time": "2022-04-10T14:15:08+00:00"
+            "time": "2023-11-03T15:35:58+00:00"
         },
         {
             "name": "phplrt/visitor",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/visitor.git",
-                "reference": "b905c116053a8f301d565cc21f35ea3bc9755b94"
+                "reference": "b2ccf7ad0a374efeb82b6c79a4bc9eef8a28a93b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/visitor/zipball/b905c116053a8f301d565cc21f35ea3bc9755b94",
-                "reference": "b905c116053a8f301d565cc21f35ea3bc9755b94",
+                "url": "https://api.github.com/repos/phplrt/visitor/zipball/b2ccf7ad0a374efeb82b6c79a4bc9eef8a28a93b",
+                "reference": "b2ccf7ad0a374efeb82b6c79a4bc9eef8a28a93b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "phplrt/ast-contracts": "^3.2"
+                "phplrt/ast-contracts": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -893,7 +895,7 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/visitor"
             },
-            "time": "2022-04-10T13:58:39+00:00"
+            "time": "2023-11-04T17:19:46+00:00"
         },
         {
             "name": "psr/container",
@@ -950,49 +952,46 @@
         },
         {
             "name": "symfony/console",
-            "version": "v6.1.4",
+            "version": "v7.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "7fccea8728aa2d431a6725b02b3ce759049fc84d"
+                "reference": "cdce5c684b2f920bb1343deecdfba356ffad83d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/7fccea8728aa2d431a6725b02b3ce759049fc84d",
-                "reference": "7fccea8728aa2d431a6725b02b3ce759049fc84d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/cdce5c684b2f920bb1343deecdfba356ffad83d5",
+                "reference": "cdce5c684b2f920bb1343deecdfba356ffad83d5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
-                "symfony/deprecation-contracts": "^2.1|^3",
+                "php": ">=8.2",
                 "symfony/polyfill-mbstring": "~1.0",
-                "symfony/service-contracts": "^1.1|^2|^3",
-                "symfony/string": "^5.4|^6.0"
+                "symfony/service-contracts": "^2.5|^3",
+                "symfony/string": "^6.4|^7.0"
             },
             "conflict": {
-                "symfony/dependency-injection": "<5.4",
-                "symfony/dotenv": "<5.4",
-                "symfony/event-dispatcher": "<5.4",
-                "symfony/lock": "<5.4",
-                "symfony/process": "<5.4"
+                "symfony/dependency-injection": "<6.4",
+                "symfony/dotenv": "<6.4",
+                "symfony/event-dispatcher": "<6.4",
+                "symfony/lock": "<6.4",
+                "symfony/process": "<6.4"
             },
             "provide": {
                 "psr/log-implementation": "1.0|2.0|3.0"
             },
             "require-dev": {
                 "psr/log": "^1|^2|^3",
-                "symfony/config": "^5.4|^6.0",
-                "symfony/dependency-injection": "^5.4|^6.0",
-                "symfony/event-dispatcher": "^5.4|^6.0",
-                "symfony/lock": "^5.4|^6.0",
-                "symfony/process": "^5.4|^6.0",
-                "symfony/var-dumper": "^5.4|^6.0"
-            },
-            "suggest": {
-                "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": "",
-                "symfony/lock": "",
-                "symfony/process": ""
+                "symfony/config": "^6.4|^7.0",
+                "symfony/dependency-injection": "^6.4|^7.0",
+                "symfony/event-dispatcher": "^6.4|^7.0",
+                "symfony/http-foundation": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/lock": "^6.4|^7.0",
+                "symfony/messenger": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0",
+                "symfony/stopwatch": "^6.4|^7.0",
+                "symfony/var-dumper": "^6.4|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -1021,12 +1020,12 @@
             "homepage": "https://symfony.com",
             "keywords": [
                 "cli",
-                "command line",
+                "command-line",
                 "console",
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v6.1.4"
+                "source": "https://github.com/symfony/console/tree/v7.0.1"
             },
             "funding": [
                 {
@@ -1042,20 +1041,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-26T10:32:31+00:00"
+            "time": "2023-12-01T15:10:06+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.1.1",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918"
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
-                "reference": "07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/7c3aff79d10325257a001fcf92d991f24fc967cf",
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf",
                 "shasum": ""
             },
             "require": {
@@ -1064,7 +1063,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.1-dev"
+                    "dev-main": "3.4-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -1093,7 +1092,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.1.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -1109,20 +1108,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-25T11:15:52+00:00"
+            "time": "2023-05-23T14:45:45+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.26.0",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4"
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
-                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
                 "shasum": ""
             },
             "require": {
@@ -1137,7 +1136,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.28-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1175,7 +1174,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -1191,20 +1190,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2023-01-26T09:26:14+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
-            "version": "v1.26.0",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
-                "reference": "433d05519ce6990bf3530fba6957499d327395c2"
+                "reference": "875e90aeea2777b6f135677f618529449334a612"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/433d05519ce6990bf3530fba6957499d327395c2",
-                "reference": "433d05519ce6990bf3530fba6957499d327395c2",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/875e90aeea2777b6f135677f618529449334a612",
+                "reference": "875e90aeea2777b6f135677f618529449334a612",
                 "shasum": ""
             },
             "require": {
@@ -1216,7 +1215,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.28-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1256,7 +1255,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -1272,20 +1271,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2023-01-26T09:26:14+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.26.0",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "219aa369ceff116e673852dce47c3a41794c14bd"
+                "reference": "8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/219aa369ceff116e673852dce47c3a41794c14bd",
-                "reference": "219aa369ceff116e673852dce47c3a41794c14bd",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92",
+                "reference": "8c4ad05dd0120b6a53c1ca374dca2ad0a1c4ed92",
                 "shasum": ""
             },
             "require": {
@@ -1297,7 +1296,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.28-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1340,7 +1339,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -1356,20 +1355,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2023-01-26T09:26:14+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.26.0",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e"
+                "reference": "42292d99c55abe617799667f454222c54c60e229"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
-                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/42292d99c55abe617799667f454222c54c60e229",
+                "reference": "42292d99c55abe617799667f454222c54c60e229",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1383,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.26-dev"
+                    "dev-main": "1.28-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1423,7 +1422,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.26.0"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.28.0"
             },
             "funding": [
                 {
@@ -1439,36 +1438,116 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:49:31+00:00"
+            "time": "2023-07-28T09:04:16+00:00"
         },
         {
-            "name": "symfony/service-contracts",
-            "version": "v3.1.1",
+            "name": "symfony/polyfill-php80",
+            "version": "v1.28.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "925e713fe8fcacf6bc05e936edd8dd5441a21239"
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "6caa57379c4aec19c0a12a38b59b26487dcfe4b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/925e713fe8fcacf6bc05e936edd8dd5441a21239",
-                "reference": "925e713fe8fcacf6bc05e936edd8dd5441a21239",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/6caa57379c4aec19c0a12a38b59b26487dcfe4b5",
+                "reference": "6caa57379c4aec19c0a12a38b59b26487dcfe4b5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
-                "psr/container": "^2.0"
-            },
-            "conflict": {
-                "ext-psr": "<1.1|>=2"
-            },
-            "suggest": {
-                "symfony/service-implementation": ""
+                "php": ">=7.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.1-dev"
+                    "dev-main": "1.28-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.28.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-01-26T09:26:14+00:00"
+        },
+        {
+            "name": "symfony/service-contracts",
+            "version": "v3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/service-contracts.git",
+                "reference": "fe07cbc8d837f60caf7018068e350cc5163681a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/fe07cbc8d837f60caf7018068e350cc5163681a0",
+                "reference": "fe07cbc8d837f60caf7018068e350cc5163681a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "psr/container": "^1.1|^2.0"
+            },
+            "conflict": {
+                "ext-psr": "<1.1|>=2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.4-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -1508,7 +1587,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/v3.1.1"
+                "source": "https://github.com/symfony/service-contracts/tree/v3.4.1"
             },
             "funding": [
                 {
@@ -1524,37 +1603,38 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-30T19:18:58+00:00"
+            "time": "2023-12-26T14:02:43+00:00"
         },
         {
             "name": "symfony/string",
-            "version": "v6.1.4",
+            "version": "v7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "290972cad7b364e3befaa74ba0ec729800fb161c"
+                "reference": "92bd2bfbba476d4a1838e5e12168bef2fd1e6620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/290972cad7b364e3befaa74ba0ec729800fb161c",
-                "reference": "290972cad7b364e3befaa74ba0ec729800fb161c",
+                "url": "https://api.github.com/repos/symfony/string/zipball/92bd2bfbba476d4a1838e5e12168bef2fd1e6620",
+                "reference": "92bd2bfbba476d4a1838e5e12168bef2fd1e6620",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/polyfill-ctype": "~1.8",
                 "symfony/polyfill-intl-grapheme": "~1.0",
                 "symfony/polyfill-intl-normalizer": "~1.0",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
-                "symfony/translation-contracts": "<2.0"
+                "symfony/translation-contracts": "<2.5"
             },
             "require-dev": {
-                "symfony/error-handler": "^5.4|^6.0",
-                "symfony/http-client": "^5.4|^6.0",
-                "symfony/translation-contracts": "^2.0|^3.0",
-                "symfony/var-exporter": "^5.4|^6.0"
+                "symfony/error-handler": "^6.4|^7.0",
+                "symfony/http-client": "^6.4|^7.0",
+                "symfony/intl": "^6.4|^7.0",
+                "symfony/translation-contracts": "^2.5|^3.0",
+                "symfony/var-exporter": "^6.4|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -1593,7 +1673,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.1.4"
+                "source": "https://github.com/symfony/string/tree/v7.0.0"
             },
             "funding": [
                 {
@@ -1609,35 +1689,35 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-12T18:05:43+00:00"
+            "time": "2023-11-29T08:40:23+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "laminas/laminas-code",
-            "version": "4.7.0",
+            "version": "4.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-code.git",
-                "reference": "0337d9265bc2e6376babad8c511500821620cb30"
+                "reference": "7353d4099ad5388e84737dd16994316a04f48dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/0337d9265bc2e6376babad8c511500821620cb30",
-                "reference": "0337d9265bc2e6376babad8c511500821620cb30",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/7353d4099ad5388e84737dd16994316a04f48dbf",
+                "reference": "7353d4099ad5388e84737dd16994316a04f48dbf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4, <8.2"
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
-                "doctrine/annotations": "^1.13.2",
+                "doctrine/annotations": "^2.0.1",
                 "ext-phar": "*",
-                "laminas/laminas-coding-standard": "^2.3.0",
-                "laminas/laminas-stdlib": "^3.6.1",
-                "phpunit/phpunit": "^9.5.10",
-                "psalm/plugin-phpunit": "^0.17.0",
-                "vimeo/psalm": "^4.13.1"
+                "laminas/laminas-coding-standard": "^2.5.0",
+                "laminas/laminas-stdlib": "^3.17.0",
+                "phpunit/phpunit": "^10.3.3",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.15.0"
             },
             "suggest": {
                 "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
@@ -1645,9 +1725,6 @@
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "polyfill/ReflectionEnumPolyfill.php"
-                ],
                 "psr-4": {
                     "Laminas\\Code\\": "src/"
                 }
@@ -1677,33 +1754,33 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-09-13T10:33:30+00:00"
+            "time": "2023-10-18T10:00:55+00:00"
         },
         {
             "name": "phplrt/compiler",
-            "version": "3.2.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phplrt/compiler.git",
-                "reference": "bfb19ccf525f94649232dbbe8ba59dc8d2b54f55"
+                "reference": "de3c7f3b12e5993248f077e94dfc2635a0639e01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phplrt/compiler/zipball/bfb19ccf525f94649232dbbe8ba59dc8d2b54f55",
-                "reference": "bfb19ccf525f94649232dbbe8ba59dc8d2b54f55",
+                "url": "https://api.github.com/repos/phplrt/compiler/zipball/de3c7f3b12e5993248f077e94dfc2635a0639e01",
+                "reference": "de3c7f3b12e5993248f077e94dfc2635a0639e01",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-code": "^4.0",
                 "php": "^7.4|^8.0",
-                "phplrt/lexer": "^3.2",
-                "phplrt/parser": "^3.2",
-                "phplrt/position": "^3.2",
-                "phplrt/visitor": "^3.2"
+                "phplrt/lexer": "^3.4",
+                "phplrt/parser": "^3.4",
+                "phplrt/position": "^3.4",
+                "phplrt/visitor": "^3.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5.20",
-                "vimeo/psalm": "^4.22"
+                "vimeo/psalm": "^5.15"
             },
             "type": "library",
             "extra": {
@@ -1739,41 +1816,36 @@
                 "issues": "https://github.com/phplrt/phplrt/issues",
                 "source": "https://github.com/phplrt/compiler"
             },
-            "time": "2022-04-10T13:58:15+00:00"
+            "time": "2023-11-04T17:13:43+00:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v6.1.3",
+            "version": "v7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "d5a5e44a2260c5eb5e746bf4f1fbd12ee6ceb427"
+                "reference": "cf0220fc7607476fd0d001ab3ed9e830d1fdda56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/d5a5e44a2260c5eb5e746bf4f1fbd12ee6ceb427",
-                "reference": "d5a5e44a2260c5eb5e746bf4f1fbd12ee6ceb427",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/cf0220fc7607476fd0d001ab3ed9e830d1fdda56",
+                "reference": "cf0220fc7607476fd0d001ab3ed9e830d1fdda56",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1",
+                "php": ">=8.2",
                 "symfony/polyfill-mbstring": "~1.0"
             },
             "conflict": {
-                "phpunit/phpunit": "<5.4.3",
-                "symfony/console": "<5.4"
+                "symfony/console": "<6.4"
             },
             "require-dev": {
                 "ext-iconv": "*",
-                "symfony/console": "^5.4|^6.0",
-                "symfony/process": "^5.4|^6.0",
-                "symfony/uid": "^5.4|^6.0",
-                "twig/twig": "^2.13|^3.0.4"
-            },
-            "suggest": {
-                "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
-                "ext-intl": "To show region name in time zone dump",
-                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+                "symfony/console": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0",
+                "symfony/uid": "^6.4|^7.0",
+                "twig/twig": "^3.0.4"
             },
             "bin": [
                 "Resources/bin/var-dump-server"
@@ -1811,7 +1883,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v6.1.3"
+                "source": "https://github.com/symfony/var-dumper/tree/v7.0.0"
             },
             "funding": [
                 {
@@ -1827,7 +1899,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-20T13:46:29+00:00"
+            "time": "2023-11-27T12:39:18+00:00"
         }
     ],
     "aliases": [],
@@ -1839,5 +1911,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
