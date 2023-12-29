@@ -6,8 +6,8 @@ return [
     'initial' => 'Expression',
     'tokens' => [
         'default' => [
-            'T_INT' => '\\d+',
             'T_FLOAT' => '\\d+\\.\\d+',
+            'T_INT' => '\\d+',
             'T_PLUS' => '\\+',
             'T_MINUS' => '\\-',
             'T_MUL' => '\\*',
