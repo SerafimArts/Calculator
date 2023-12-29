@@ -1,6 +1,6 @@
 
-%token T_INT      \d+
 %token T_FLOAT    \d+\.\d+
+%token T_INT      \d+
 
 %token T_PLUS     \+
 %token T_MINUS    \-
