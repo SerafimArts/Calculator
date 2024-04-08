@@ -1,7 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 use Serafim\Calc\Ast;
 
+/**
+ * @var array{
+ *     initial: array-key,
+ *     tokens: array{
+ *         default: array<non-empty-string, non-empty-string>,
+ *         ...
+ *     },
+ *     skip: list<non-empty-string>,
+ *     grammar: array<array-key, \Phplrt\Parser\Grammar\RuleInterface>,
+ *     reducers: array<array-key, callable(\Phplrt\Parser\Context, mixed):mixed>,
+ *     transitions?: array<array-key, mixed>
+ * }
+ */
 return [
     'initial' => 'Expression',
     'tokens' => [
@@ -20,9 +35,7 @@ return [
     'skip' => [
         'T_WHITESPACE',
     ],
-    'transitions' => [
-        
-    ],
+    'transitions' => [],
     'grammar' => [
         0 => new \Phplrt\Parser\Grammar\Concatenation([2, 11, 'Expression']),
         1 => new \Phplrt\Parser\Grammar\Concatenation([2, 10, 'Expression']),
@@ -38,54 +51,62 @@ return [
         11 => new \Phplrt\Parser\Grammar\Lexeme('T_PLUS', false),
         12 => new \Phplrt\Parser\Grammar\Lexeme('T_MUL', false),
         13 => new \Phplrt\Parser\Grammar\Lexeme('T_DIV', false),
-        16 => new \Phplrt\Parser\Grammar\Lexeme('T_MINUS', false),
-        'Expression' => new \Phplrt\Parser\Grammar\Alternation([0, 1, 2]),
-        15 => new \Phplrt\Parser\Grammar\Concatenation([16, 'Expression']),
         14 => new \Phplrt\Parser\Grammar\Alternation([17, 18]),
+        15 => new \Phplrt\Parser\Grammar\Concatenation([16, 'Expression']),
+        16 => new \Phplrt\Parser\Grammar\Lexeme('T_MINUS', false),
         17 => new \Phplrt\Parser\Grammar\Lexeme('T_INT', true),
-        18 => new \Phplrt\Parser\Grammar\Lexeme('T_FLOAT', true)
+        18 => new \Phplrt\Parser\Grammar\Lexeme('T_FLOAT', true),
+        'Expression' => new \Phplrt\Parser\Grammar\Alternation([0, 1, 2]),
     ],
     'reducers' => [
-        1 => function (\Phplrt\Parser\Context $ctx, $children) {
-            $token = $ctx->getToken();
-            return new Ast\Expression\Subtraction(
-            $children[0],
-            $children[1],
-            $token->getOffset(),
-        );
-        },
-        0 => function (\Phplrt\Parser\Context $ctx, $children) {
-            $token = $ctx->getToken();
+        0 => static function (\Phplrt\Parser\Context $ctx, $children) {
+            // The "$token" variable is an auto-generated
+            $token = $ctx->lastProcessedToken;
+
             return new Ast\Expression\Addition(
-            $children[0],
-            $children[1],
-            $token->getOffset(),
-        );
+                $children[0],
+                $children[1],
+                $token->getOffset(),
+            );
         },
-        3 => function (\Phplrt\Parser\Context $ctx, $children) {
-            $token = $ctx->getToken();
+        1 => static function (\Phplrt\Parser\Context $ctx, $children) {
+            // The "$token" variable is an auto-generated
+            $token = $ctx->lastProcessedToken;
+
+            return new Ast\Expression\Subtraction(
+                $children[0],
+                $children[1],
+                $token->getOffset(),
+            );
+        },
+        3 => static function (\Phplrt\Parser\Context $ctx, $children) {
+            // The "$token" variable is an auto-generated
+            $token = $ctx->lastProcessedToken;
+
             return new Ast\Expression\Multiplication(
-            $children[0],
-            $children[1],
-            $token->getOffset(),
-        );
+                $children[0],
+                $children[1],
+                $token->getOffset(),
+            );
         },
-        4 => function (\Phplrt\Parser\Context $ctx, $children) {
-            $token = $ctx->getToken();
+        4 => static function (\Phplrt\Parser\Context $ctx, $children) {
+            // The "$token" variable is an auto-generated
+            $token = $ctx->lastProcessedToken;
+
             return new Ast\Expression\Division(
-            $children[0],
-            $children[1],
-            $token->getOffset(),
-        );
+                $children[0],
+                $children[1],
+                $token->getOffset(),
+            );
         },
-        15 => function (\Phplrt\Parser\Context $ctx, $children) {
+        15 => static function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\Minus($children[0]);
         },
-        17 => function (\Phplrt\Parser\Context $ctx, $children) {
+        17 => static function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\IntValue($children->getValue());
         },
-        18 => function (\Phplrt\Parser\Context $ctx, $children) {
+        18 => static function (\Phplrt\Parser\Context $ctx, $children) {
             return new Ast\Expression\FloatValue($children->getValue());
-        }
-    ]
+        },
+    ],
 ];
