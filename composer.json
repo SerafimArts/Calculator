@@ -12,10 +12,10 @@
     "require": {
         "php": "^8.1",
         "symfony/console": "^5.4|^6.0|^7.0",
-        "phplrt/runtime": "^3.4"
+        "phplrt/runtime": "^3.6"
     },
     "require-dev": {
-        "phplrt/compiler": "^3.4",
+        "phplrt/compiler": "^3.6",
         "symfony/var-dumper": "^5.4|^6.0|^7.0"
     },
     "minimum-stability": "dev",
